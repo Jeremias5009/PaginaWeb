@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<j2xml version="21.12.0">
+<user>
+    <id>864</id>
+    <name><![CDATA[Super Usuario]]></name>
+    <username><![CDATA[admin]]></username>
+    <email><![CDATA[webmaster@pdh.org.gt]]></email>
+    <block>0</block>
+    <sendEmail>1</sendEmail>
+    <registerDate><![CDATA[2020-06-09 16:26:23]]></registerDate>
+    <lastvisitDate><![CDATA[2024-05-01 18:41:07]]></lastvisitDate>
+    <activation>0</activation>
+    <params><![CDATA[{"admin_style":"","admin_language":"","language":"","editor":"tinymce","timezone":"","astroid_author_picture":0,"upload":"","astroid_author_aboutme":"","astroid_author_social":[],"helpsite":""}]]></params>
+    <lastResetTime><![CDATA[0000-00-00 00:00:00]]></lastResetTime>
+    <resetCount>0</resetCount>
+    <requireReset>0</requireReset>
+    <group><![CDATA[["Publico","Super Usuarios"]]]></group>
+  </user>
+</j2xml>

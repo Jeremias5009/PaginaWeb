@@ -1,0 +1,156 @@
+.jmm-team-profiles.default .jmm-mod-row {
+	/*margin: 15px;*/ /*este es mi codigo jere para crear espacio a la derecha*/
+	margin-top: 40px; /*este es mi codigo jere para crear margen arriba*/
+}
+
+.jmm-team-profiles.default .jmm-mod-row:before,
+.jmm-team-profiles.default .jmm-mod-row:after {
+	display: table;
+	content: "";
+	line-height: 0
+}
+
+.jmm-team-profiles.default .jmm-mod-row:after {
+	clear: both
+}
+
+.jmm-team-profiles.default .jmm-mod-row > div {
+	float: left;
+	/*padding: 15px;*/ /*este es mi codigo jere para crear borde a los costados de la imagen de portada*/
+	box-sizing: border-box
+}
+
+html[dir='rtl'] .jmm-team-profiles.default .jmm-mod-row > div {
+	float: right;
+}
+
+.jmm-team-profiles.default .jmm-mod-row.row-1 > div {
+	width: 100%
+}
+
+.jmm-team-profiles.default .jmm-mod-row.row-2 > div {
+	width: 50%
+}
+
+.jmm-team-profiles.default .jmm-mod-row.row-3 > div {
+	width: 33.33%
+}
+
+.jmm-team-profiles.default .jmm-mod-row.row-4 > div {
+	width: 25%
+}
+
+.jmm-team-profiles.default .jmm-mod-row.row-5 > div {
+	width: 20%
+}
+
+.jmm-team-profiles.default .jmm-mod-row.row-6 > div {
+	width: 16.66%
+}
+
+.jmm-team-profiles.default .jmm-mod-row.row-7 > div {
+	width: 14.28%
+}
+
+.jmm-team-profiles.default .jmm-mod-row.row-8 > div {
+	width: 12.5%
+}
+
+.jmm-team-profiles.default .jmm-mod-row.row-9 > div {
+	width: 11.11%
+}
+
+.jmm-team-profiles.default .jmm-mod-row.row-10 > div {
+	width: 10%
+}
+
+.jmm-team-profiles.default .jmm-mod-row.row-11 > div {
+	width: 9.09%
+}
+
+.jmm-team-profiles.default .jmm-mod-row.row-12 > div {
+	width: 8.33%
+}
+
+.jmm-team-profiles.default {
+	text-align: center /* alineacion de texto a la caja */
+}
+
+.jmm-team-profiles.default .jmm-avatar {
+	margin-bottom: 40px /*margen de la imagen al texto */
+}
+
+.jmm-team-profiles.default .jmm-avatar .rounded img {
+	border-radius: 100%
+}
+
+.jmm-team-profiles.default .jmm-name {
+	font-size: 1.286em;
+	color: #000001;
+    	font-weight: 700;
+    	font-style: oblique;
+	text-decoration: none;
+	margin-bottom: 40px; /* es mi codigo jere para margen despues del texto del perfil*/
+
+}
+
+.jmm-team-profiles.default .jmm-profession {
+	font-size: .929em
+}
+
+.jmm-team-profiles.default .jmm-social {
+	margin-top: 30px
+}
+
+.jmm-team-profiles.default .jmm-social ul li {
+	display: inline-block;
+	vertical-align: top;
+	margin: 0 3px;
+}
+
+.jmm-team-profiles.default .jmm-social .jmm-link span.jmm-ico {
+	color: inherit;
+	font-size: 18px;
+	width: 46px;
+	height: 46px;
+	line-height: 46px;
+	text-align: center;
+	border: 1px solid #ededed;
+	border-radius: 50%
+}
+
+.jmm-team-profiles.default .jmm-desc {
+	margin-top: 30px
+}
+
+@media (max-width: 767px) {
+	.jmm-team-profiles.default .jmm-mod-row.row-2 > div,
+	.jmm-team-profiles.default .jmm-mod-row.row-3 > div,
+	.jmm-team-profiles.default .jmm-mod-row.row-4 > div,
+	.jmm-team-profiles.default .jmm-mod-row.row-5 > div,
+	.jmm-team-profiles.default .jmm-mod-row.row-6 > div,
+	.jmm-team-profiles.default .jmm-mod-row.row-7 > div,
+	.jmm-team-profiles.default .jmm-mod-row.row-8 > div,
+	.jmm-team-profiles.default .jmm-mod-row.row-9 > div,
+	.jmm-team-profiles.default .jmm-mod-row.row-10 > div,
+	.jmm-team-profiles.default .jmm-mod-row.row-11 > div,
+	.jmm-team-profiles.default .jmm-mod-row.row-12 > div {
+		width: 100%
+	}
+}
+
+/* Estilos para la tarjeta perfil de defensores*/
+
+.jmm-mod-row {
+	box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px; /*sombra definido*/	
+}
+
+.jmm-mod-row {
+    transition: all 0.5s ease-out; /* tiempo de transicion*/
+}
+
+.jmm-mod-row:hover{
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px; /*hover al posicionar el mouse*/		
+}
+
+

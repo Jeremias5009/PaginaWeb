@@ -1,0 +1,61 @@
+.rl-tooltips-animate-fade-in {
+    animation: rl-tooltips-animation-fade-in 300ms ease;
+}
+
+.rl-tooltips-animate-fade-out {
+    animation: rl-tooltips-animation-fade-out 300ms ease;
+}
+
+.rl-tooltips-animate-zoom-in {
+    animation: rl-tooltips-animation-zoom-in 150ms ease;
+}
+
+.rl-tooltips-animate-zoom-out {
+    animation: rl-tooltips-animation-zoom-out 300ms ease;
+}
+
+.rl-tooltips-animate-show {
+    opacity: 1;
+}
+
+.rl-tooltips-animate-hide {
+    opacity: 0;
+}
+
+@keyframes rl-tooltips-animation-fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes rl-tooltips-animation-fade-out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes rl-tooltips-animation-zoom-in {
+    from {
+        opacity:   0;
+        transform: scale3d(0.25, 0.25, 0.25);
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes rl-tooltips-animation-zoom-out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity:   0;
+        transform: scale3d(0.25, 0.25, 0.25);
+    }
+}

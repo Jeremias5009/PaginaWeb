@@ -1,0 +1,29 @@
+#sis_videogrid{
+    height: 540px;
+    overflow: auto;
+}
+#sis_videogrid.horizontal{
+    display: flex;
+    overflow: auto;
+    height: auto;
+    margin-top: 0.2rem;
+}
+#sis_videogrid .sis_video{
+    margin-bottom: 1rem;
+    opacity: 0.6;
+}
+#sis_videogrid.horizontal .sis_video{
+    flex-shrink: 0;
+    width: 12em;
+    height: 6em;
+}
+#sis_videogrid .sis_video:last-child{
+    margin-bottom: 0;
+}
+#sis_videogrid .sis_video img{
+    cursor: pointer;
+}
+#sis_videogrid .sis_video:hover,
+#sis_videogrid .sis_video.active{
+    opacity: 1;
+}

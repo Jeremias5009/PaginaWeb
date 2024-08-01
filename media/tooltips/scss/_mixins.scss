@@ -1,0 +1,51 @@
+@import "_functions";
+
+@mixin colors(
+    $background_color: false,
+    $border_color: false,
+    $text_color: false,
+    $title_background_color: false,
+    $title_border_color: false,
+    $title_text_color: false,
+) {
+    $colors: "red", "orange", "yellow", "green", "teal", "blue", "purple", "pink", "grey";
+
+    @each $color in $colors {
+        @include color(
+                        $color,
+                        $background_color,
+                        $border_color,
+                        $text_color,
+                        $title_background_color,
+                        $title_border_color,
+                        $title_text_color,
+        );
+    }
+}
+
+@mixin color(
+    $color_name,
+    $background_color: false,
+    $border_color: false,
+    $text_color: false,
+    $title_background_color: false,
+    $title_border_color: false,
+    $title_text_color: false,
+) {
+    $background_color:       getColor($color_name, $background_color);
+    $border_color:           getColor($color_name, $border_color);
+    $text_color:             getColor($color_name, $text_color);
+    $title_background_color: getColor($color_name, $title_background_color);
+    $title_border_color:     getColor($color_name, $title_border_color);
+    $title_text_color:       getColor($color_name, $title_text_color);
+
+    &[data-tooltips-style="#{$color_name}"] {
+        --background-color:       #{$background_color};
+        --border-color:           #{$border_color};
+        --text-color:             #{$text_color};
+
+        --title-background-color: #{$title_background_color};
+        --title-border-color:     #{$title_border_color};
+        --title-text-color:       #{$title_text_color};
+    }
+}

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config addfieldprefix="RegularLabs\Library\Form\Field">
+  <fieldset name="main" addfieldprefix="RegularLabs\Library\Form\Field">
+    <field name="@block__tooltip__a" type="Block" start="1"/>
+    <field name="title" type="Text" label="JGLOBAL_TITLE" description="TT_TOOLTIP_TITLE_DESC"/>
+    <field name="content_type" type="Radio" class="btn-group rl-btn-group btn-group-md" default="text" label="RL_CONTENT">
+      <option value="text" class="btn btn-outline-info">%s %s,&lt;span class="icon-paragraph-justify"&gt;&lt;/span&gt;,RL_TEXT</option>
+      <option value="image" class="btn btn-outline-info">%s %s,&lt;span class="icon-image"&gt;&lt;/span&gt;,RL_IMAGE</option>
+    </field>
+    <field name="@showon__content_type_text__a" type="ShowOn" value="content_type:text"/>
+    <field name="content_text" type="Textarea" label="RL_TEXT_HTML" description="TT_TOOLTIP_TEXT_DESC"/>
+    <field name="@showon__content_type_text__b" type="ShowOn"/>
+    <field name="@showon__content_type_image__a" type="ShowOn" value="content_type:image"/>
+    <field name="content_image" type="Media" label="RL_IMAGE" description="TT_TOOLTIP_IMAGE_DESC"/>
+    <field name="@showon__content_type_image_url__b" type="ShowOn"/>
+    <field name="@block__tooltip__b" type="Block" end="1"/>
+    <field name="@block__link__a" type="Block" start="1"/>
+    <field name="link_type" type="Radio" class="btn-group rl-btn-group btn-group-md" default="text" label="TT_LINK">
+      <option value="text" class="btn btn-outline-info">%s %s,&lt;span class="icon-paragraph-justify"&gt;&lt;/span&gt;,RL_TEXT</option>
+      <option value="image" class="btn btn-outline-info">%s %s,&lt;span class="icon-image"&gt;&lt;/span&gt;,RL_IMAGE</option>
+    </field>
+    <field name="@showon__link_type_text__a" type="ShowOn" value="link_type:text"/>
+    <field name="link_text" type="Textarea" label="RL_TEXT_HTML" description="TT_LINK_TEXT_DESC"/>
+    <field name="@showon__link_type_text__b" type="ShowOn"/>
+    <field name="@showon__link_type_image__a" type="ShowOn" value="link_type:image"/>
+    <field name="link_image" type="Media" label="RL_IMAGE" description="TT_LINK_IMAGE_DESC"/>
+    <field name="@showon__link_type_image_url__b" type="ShowOn"/>
+    <field name="@block__link__b" type="Block" end="1"/>
+  </fieldset>
+  <fieldset name="styling">
+    <field name="theme" type="List" default="" class="w-auto" label="RL_THEME">
+      <option value="">JDEFAULT</option>
+      <option value="dark">TT_THEME_DARK</option>
+      <option value="light">TT_THEME_LIGHT</option>
+      <option value="custom">RL_CUSTOM</option>
+      <option disabled="disabled" value="-">---</option>
+      <option disabled="disabled" value="-">RL_ONLY_AVAILABLE_IN_PRO_LIST_OPTION</option>
+      <option disabled="disabled" value="-">TT_THEME_AUTOMATIC_DARK</option>
+      <option disabled="disabled" value="-">TT_THEME_AUTOMATIC_LIGHT</option>
+    </field>
+    <field name="class" type="Text" label="RL_CSS_CLASS" description="RL_CSS_CLASS_DESC"/>
+    <field name="width" type="Number" class="font-monospace text-right rl-w-8em" size="10" default="" label="RL_WIDTH" hint="RL_AUTOMATIC" description="%s&lt;br&gt;&lt;br&gt;%s,TT_DIMENSION_DESC,RL_EMPTY_FOR_AUTOMATIC_SIZING"/>
+    <field name="height" type="Number" class="font-monospace text-right rl-w-8em" size="10" default="" label="RL_HEIGHT" hint="RL_AUTOMATIC" description="%s&lt;br&gt;&lt;br&gt;%s,TT_DIMENSION_DESC,RL_EMPTY_FOR_AUTOMATIC_SIZING"/>
+    <field name="@note__position" type="OnlyPro" label="TT_POSITION" description="TT_POSITION_DESC"/>
+    <field name="@note__effect" type="OnlyPro" label="TT_EFFECT" description="TT_EFFECT_DESC"/>
+  </fieldset>
+  <fieldset name="settings">
+    <field name="@note__mode" type="OnlyPro" label="TT_MODE" description="TT_MODE_DESC"/>
+  </fieldset>
+</config>

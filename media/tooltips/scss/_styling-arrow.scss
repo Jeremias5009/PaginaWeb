@@ -1,0 +1,85 @@
+[data-tooltips-element="arrow"] {
+    --arrow-offset: calc(var(--arrow-size) * .415);
+
+    &, &:after {
+        position: absolute;
+        display:  block;
+    }
+
+    & {
+        overflow: hidden;
+    }
+
+    &:after {
+        content:    "";
+        width:      calc(var(--arrow-size) * 2);
+        height:     calc(var(--arrow-size) * 2);
+        background: var(--background-color);
+        border:     var(--border-width) solid var(--border-color);
+        transform:  rotate(45deg);
+    }
+}
+
+&[data-tooltips-position="top"] [data-tooltips-element="arrow"],
+&[data-tooltips-position="bottom"] [data-tooltips-element="arrow"] {
+    left:        50%;
+    margin-left: calc(var(--arrow-size) * -1);
+    width:       calc(var(--arrow-size) * 2);
+    height:      var(--arrow-size);
+
+    &:after {
+        left:        50%;
+        margin-left: calc(var(--arrow-size) * -1);
+    }
+}
+
+&[data-tooltips-position="top"] [data-tooltips-element="arrow"] {
+    bottom: calc((var(--arrow-size) * -1) + var(--border-width));
+
+    &:after {
+        bottom: var(--arrow-offset);
+    }
+}
+
+&[data-tooltips-position="bottom"] [data-tooltips-element="arrow"] {
+    top: calc((var(--arrow-size) * -1) + var(--border-width));
+
+    &:after {
+        top: var(--arrow-offset);
+    }
+}
+
+&[data-tooltips-position="left"] [data-tooltips-element="arrow"],
+&[data-tooltips-position="right"] [data-tooltips-element="arrow"] {
+    top:        50%;
+    margin-top: calc(var(--arrow-size) * -1);
+    width:      var(--arrow-size);
+    height:     calc(var(--arrow-size) * 2);
+
+    &:after {
+        top:        50%;
+        margin-top: calc(var(--arrow-size) * -1);
+    }
+}
+
+&[data-tooltips-position="left"] [data-tooltips-element="arrow"] {
+    right: calc((var(--arrow-size) * -1) + var(--border-width));
+
+    &:after {
+        right: var(--arrow-offset);
+    }
+}
+
+&[data-tooltips-position="right"] [data-tooltips-element="arrow"] {
+    left: calc((var(--arrow-size) * -1) + var(--border-width));
+
+    &:after {
+        left: var(--arrow-offset);
+    }
+}
+
+&[data-tooltips-arrow-on-title] {
+    [data-tooltips-element="arrow"]:after {
+        background: var(--title-background-color);
+    }
+}

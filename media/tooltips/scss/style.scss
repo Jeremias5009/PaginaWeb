@@ -1,0 +1,89 @@
+/**
+ * [Copyright Regular Labs]
+ */
+
+@import "../../regularlabs/scss/_variables";
+@import "variables";
+@import "animations";
+
+[data-tooltips] {
+    cursor:        pointer;
+    border-bottom: 1px dashed rl-color(gray, 300);
+    display:       inline-block;
+
+    &[data-tooltips-is-image],
+    &[data-tooltips-is-image-link] {
+        border-bottom: none;
+    }
+}
+
+[data-tooltips-element] {
+    box-sizing: border-box;
+}
+
+[data-tooltips-element].hidden {
+    display: none !important;
+}
+
+[data-tooltips-element="tooltip"] {
+    & {
+        --background-color:       #{$rl-white};
+        --border-color:           #{rl-color(gray, 300)};
+        --text-color:             #{rl-color(gray, 900)};
+
+        --title-background-color: #{rl-color(gray, 100)};
+        --title-border-color:     #{rl-color(gray, 100)};
+        --title-text-color:       #{rl-color(gray, 900)};
+
+        --border-width:           1px;
+        --border-radius:          4px;
+        --padding:                8px 10px;
+        --title-size:             1.1em;
+        --box-shadow:             0 5px 10px rgba(0, 0, 0, .2);
+        --arrow-size:             10px;
+    }
+
+    &[data-tooltips-is-image] {
+        --padding: 2px;
+
+        img {
+            vertical-align: middle;
+        }
+    }
+
+    z-index:  $zindex-main;
+    position: absolute;
+    top:      0;
+    left:     0;
+    outline:  none;
+
+    [data-tooltips-element="main"] {
+        display:        flex;
+        flex:           auto;
+        flex-direction: column;
+    }
+
+    [data-tooltips-element="main"] {
+        background-color: var(--background-color);
+        border:           var(--border-width) solid var(--border-color);
+        border-radius:    var(--border-radius);
+        box-shadow:       var(--box-shadow);
+        overflow:         hidden;
+    }
+
+    [data-tooltips-element="title"] {
+        font-size:        var(--title-size);
+        font-weight:      bold;
+        color:            var(--title-text-color);
+        background-color: var(--title-background-color);
+        padding:          var(--padding);
+        margin:           0;
+    }
+
+    [data-tooltips-element="content"] {
+        color:   var(--text-color);
+        padding: var(--padding);
+    }
+
+    @import "styling-arrow";
+}

@@ -1,0 +1,419 @@
+/**
+ * @package         Tooltips
+ * @version         9.2.1
+ * 
+ * @author          Peter van Westen <info@regularlabs.com>
+ * @link            https://regularlabs.com
+ * @copyright       Copyright © 2024 Regular Labs All Rights Reserved
+ * @license         GNU General Public License version 2 or later
+ */
+[data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic] {
+  --background-color: #3c4452;
+  --border-color: #4f5a6c;
+  --text-color: #ffffff;
+  --title-background-color: #1e2228;
+  --title-border-color: #1e2228;
+  --title-text-color: #ffffff;
+}
+[data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=red] {
+  --background-color: #b02120;
+  --border-color: #e66968;
+  --text-color: #ffffff;
+  --title-background-color: #5e1211;
+  --title-border-color: #5e1211;
+  --title-text-color: #ffffff;
+}
+[data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=orange] {
+  --background-color: #c85510;
+  --border-color: #fc975a;
+  --text-color: #ffffff;
+  --title-background-color: #6b2e08;
+  --title-border-color: #6b2e08;
+  --title-text-color: #ffffff;
+}
+[data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=yellow] {
+  --background-color: #cc860f;
+  --border-color: #ffc259;
+  --text-color: #ffffff;
+  --title-background-color: #6d4808;
+  --title-border-color: #6d4808;
+  --title-text-color: #ffffff;
+}
+[data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=green] {
+  --background-color: #138038;
+  --border-color: #5dbc7e;
+  --text-color: #ffffff;
+  --title-background-color: #0a441e;
+  --title-border-color: #0a441e;
+  --title-text-color: #ffffff;
+}
+[data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=teal] {
+  --background-color: #0c7b83;
+  --border-color: #57b8bf;
+  --text-color: #ffffff;
+  --title-background-color: #064246;
+  --title-border-color: #064246;
+  --title-text-color: #ffffff;
+}
+[data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=blue] {
+  --background-color: #0d4aae;
+  --border-color: #588de5;
+  --text-color: #ffffff;
+  --title-background-color: #07275d;
+  --title-border-color: #07275d;
+  --title-text-color: #ffffff;
+}
+[data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=purple] {
+  --background-color: #5e15ae;
+  --border-color: #9f5fe5;
+  --text-color: #ffffff;
+  --title-background-color: #320b5d;
+  --title-border-color: #320b5d;
+  --title-text-color: #ffffff;
+}
+[data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=pink] {
+  --background-color: #a81483;
+  --border-color: #e05ebf;
+  --text-color: #ffffff;
+  --title-background-color: #5a0a46;
+  --title-border-color: #5a0a46;
+  --title-text-color: #ffffff;
+}
+[data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=grey] {
+  --background-color: #4f5a6c;
+  --border-color: #929cab;
+  --text-color: #ffffff;
+  --title-background-color: #2a303a;
+  --title-border-color: #2a303a;
+  --title-text-color: #ffffff;
+}
+[data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=black] {
+  --background-color: #3c4452;
+  --border-color: #4f5a6c;
+  --text-color: #f4f5f6;
+  --title-background-color: #1e2228;
+  --title-border-color: #1e2228;
+  --title-text-color: #e6e8ec;
+}
+[data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=primary] {
+  --background-color: #0d4aae;
+  --border-color: #588de5;
+  --text-color: #ffffff;
+  --title-background-color: #07275d;
+  --title-border-color: #07275d;
+  --title-text-color: #ffffff;
+}
+[data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=success] {
+  --background-color: #138038;
+  --border-color: #5dbc7e;
+  --text-color: #ffffff;
+  --title-background-color: #0a441e;
+  --title-border-color: #0a441e;
+  --title-text-color: #ffffff;
+}
+[data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=info] {
+  --background-color: #0c7b83;
+  --border-color: #57b8bf;
+  --text-color: #ffffff;
+  --title-background-color: #064246;
+  --title-border-color: #064246;
+  --title-text-color: #ffffff;
+}
+[data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=warning] {
+  --background-color: #cc860f;
+  --border-color: #ffc259;
+  --text-color: #ffffff;
+  --title-background-color: #6d4808;
+  --title-border-color: #6d4808;
+  --title-text-color: #ffffff;
+}
+[data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=danger] {
+  --background-color: #b02120;
+  --border-color: #e66968;
+  --text-color: #ffffff;
+  --title-background-color: #5e1211;
+  --title-border-color: #5e1211;
+  --title-text-color: #ffffff;
+}
+[data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=error] {
+  --background-color: #b02120;
+  --border-color: #e66968;
+  --text-color: #ffffff;
+  --title-background-color: #5e1211;
+  --title-border-color: #5e1211;
+  --title-text-color: #ffffff;
+}
+@media screen and (prefers-color-scheme: light) {
+  [data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic] {
+    --background-color: #ffffff;
+    --border-color: #c0c6cf;
+    --text-color: #1e2228;
+    --title-background-color: #f4f5f6;
+    --title-border-color: #f4f5f6;
+    --title-text-color: #1e2228;
+  }
+  [data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=red] {
+    --background-color: #fcf0ef;
+    --border-color: #f1a9a9;
+    --text-color: #420c0c;
+    --title-background-color: #f1a9a9;
+    --title-border-color: #f1a9a9;
+    --title-text-color: #420c0c;
+  }
+  [data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=orange] {
+    --background-color: #fef4ee;
+    --border-color: #fdc3a1;
+    --text-color: #4b2006;
+    --title-background-color: #fdc3a1;
+    --title-border-color: #fdc3a1;
+    --title-text-color: #4b2006;
+  }
+  [data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=yellow] {
+    --background-color: #fff8ee;
+    --border-color: #ffdca0;
+    --text-color: #4c3205;
+    --title-background-color: #ffdca0;
+    --title-border-color: #ffdca0;
+    --title-text-color: #4c3205;
+  }
+  [data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=green] {
+    --background-color: #eef8f2;
+    --border-color: #a2d9b5;
+    --text-color: #073015;
+    --title-background-color: #a2d9b5;
+    --title-border-color: #a2d9b5;
+    --title-text-color: #073015;
+  }
+  [data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=teal] {
+    --background-color: #eef7f8;
+    --border-color: #9fd6da;
+    --text-color: #042e31;
+    --title-background-color: #9fd6da;
+    --title-border-color: #9fd6da;
+    --title-text-color: #042e31;
+  }
+  [data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=blue] {
+    --background-color: #eef3fc;
+    --border-color: #9fbef0;
+    --text-color: #051b41;
+    --title-background-color: #9fbef0;
+    --title-border-color: #9fbef0;
+    --title-text-color: #051b41;
+  }
+  [data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=purple] {
+    --background-color: #f5effc;
+    --border-color: #c8a3f0;
+    --text-color: #230841;
+    --title-background-color: #c8a3f0;
+    --title-border-color: #c8a3f0;
+    --title-text-color: #230841;
+  }
+  [data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=pink] {
+    --background-color: #fbeef8;
+    --border-color: #eda3da;
+    --text-color: #3f0731;
+    --title-background-color: #eda3da;
+    --title-border-color: #eda3da;
+    --title-text-color: #3f0731;
+  }
+  [data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=grey] {
+    --background-color: #f4f5f6;
+    --border-color: #c0c6cf;
+    --text-color: #1e2228;
+    --title-background-color: #c0c6cf;
+    --title-border-color: #c0c6cf;
+    --title-text-color: #1e2228;
+  }
+  [data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=black] {
+    --background-color: #f4f5f6;
+    --border-color: #4f5a6c;
+    --text-color: #1e2228;
+    --title-background-color: #1e2228;
+    --title-border-color: #1e2228;
+    --title-text-color: #e6e8ec;
+  }
+  [data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=primary] {
+    --background-color: #eef3fc;
+    --border-color: #9fbef0;
+    --text-color: #051b41;
+    --title-background-color: #9fbef0;
+    --title-border-color: #9fbef0;
+    --title-text-color: #051b41;
+  }
+  [data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=success] {
+    --background-color: #eef8f2;
+    --border-color: #a2d9b5;
+    --text-color: #073015;
+    --title-background-color: #a2d9b5;
+    --title-border-color: #a2d9b5;
+    --title-text-color: #073015;
+  }
+  [data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=info] {
+    --background-color: #eef7f8;
+    --border-color: #9fd6da;
+    --text-color: #042e31;
+    --title-background-color: #9fd6da;
+    --title-border-color: #9fd6da;
+    --title-text-color: #042e31;
+  }
+  [data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=warning] {
+    --background-color: #fff8ee;
+    --border-color: #ffdca0;
+    --text-color: #4c3205;
+    --title-background-color: #ffdca0;
+    --title-border-color: #ffdca0;
+    --title-text-color: #4c3205;
+  }
+  [data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=danger] {
+    --background-color: #fcf0ef;
+    --border-color: #f1a9a9;
+    --text-color: #420c0c;
+    --title-background-color: #f1a9a9;
+    --title-border-color: #f1a9a9;
+    --title-text-color: #420c0c;
+  }
+  [data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=error] {
+    --background-color: #fcf0ef;
+    --border-color: #f1a9a9;
+    --text-color: #420c0c;
+    --title-background-color: #f1a9a9;
+    --title-border-color: #f1a9a9;
+    --title-text-color: #420c0c;
+  }
+}
+.light-mode [data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic], [data-mode=light] [data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic] {
+  --background-color: #ffffff;
+  --border-color: #c0c6cf;
+  --text-color: #1e2228;
+  --title-background-color: #f4f5f6;
+  --title-border-color: #f4f5f6;
+  --title-text-color: #1e2228;
+}
+.light-mode [data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=red], [data-mode=light] [data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=red] {
+  --background-color: #fcf0ef;
+  --border-color: #f1a9a9;
+  --text-color: #420c0c;
+  --title-background-color: #f1a9a9;
+  --title-border-color: #f1a9a9;
+  --title-text-color: #420c0c;
+}
+.light-mode [data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=orange], [data-mode=light] [data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=orange] {
+  --background-color: #fef4ee;
+  --border-color: #fdc3a1;
+  --text-color: #4b2006;
+  --title-background-color: #fdc3a1;
+  --title-border-color: #fdc3a1;
+  --title-text-color: #4b2006;
+}
+.light-mode [data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=yellow], [data-mode=light] [data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=yellow] {
+  --background-color: #fff8ee;
+  --border-color: #ffdca0;
+  --text-color: #4c3205;
+  --title-background-color: #ffdca0;
+  --title-border-color: #ffdca0;
+  --title-text-color: #4c3205;
+}
+.light-mode [data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=green], [data-mode=light] [data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=green] {
+  --background-color: #eef8f2;
+  --border-color: #a2d9b5;
+  --text-color: #073015;
+  --title-background-color: #a2d9b5;
+  --title-border-color: #a2d9b5;
+  --title-text-color: #073015;
+}
+.light-mode [data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=teal], [data-mode=light] [data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=teal] {
+  --background-color: #eef7f8;
+  --border-color: #9fd6da;
+  --text-color: #042e31;
+  --title-background-color: #9fd6da;
+  --title-border-color: #9fd6da;
+  --title-text-color: #042e31;
+}
+.light-mode [data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=blue], [data-mode=light] [data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=blue] {
+  --background-color: #eef3fc;
+  --border-color: #9fbef0;
+  --text-color: #051b41;
+  --title-background-color: #9fbef0;
+  --title-border-color: #9fbef0;
+  --title-text-color: #051b41;
+}
+.light-mode [data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=purple], [data-mode=light] [data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=purple] {
+  --background-color: #f5effc;
+  --border-color: #c8a3f0;
+  --text-color: #230841;
+  --title-background-color: #c8a3f0;
+  --title-border-color: #c8a3f0;
+  --title-text-color: #230841;
+}
+.light-mode [data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=pink], [data-mode=light] [data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=pink] {
+  --background-color: #fbeef8;
+  --border-color: #eda3da;
+  --text-color: #3f0731;
+  --title-background-color: #eda3da;
+  --title-border-color: #eda3da;
+  --title-text-color: #3f0731;
+}
+.light-mode [data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=grey], [data-mode=light] [data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=grey] {
+  --background-color: #f4f5f6;
+  --border-color: #c0c6cf;
+  --text-color: #1e2228;
+  --title-background-color: #c0c6cf;
+  --title-border-color: #c0c6cf;
+  --title-text-color: #1e2228;
+}
+.light-mode [data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=black], [data-mode=light] [data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=black] {
+  --background-color: #f4f5f6;
+  --border-color: #4f5a6c;
+  --text-color: #1e2228;
+  --title-background-color: #1e2228;
+  --title-border-color: #1e2228;
+  --title-text-color: #e6e8ec;
+}
+.light-mode [data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=primary], [data-mode=light] [data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=primary] {
+  --background-color: #eef3fc;
+  --border-color: #9fbef0;
+  --text-color: #051b41;
+  --title-background-color: #9fbef0;
+  --title-border-color: #9fbef0;
+  --title-text-color: #051b41;
+}
+.light-mode [data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=success], [data-mode=light] [data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=success] {
+  --background-color: #eef8f2;
+  --border-color: #a2d9b5;
+  --text-color: #073015;
+  --title-background-color: #a2d9b5;
+  --title-border-color: #a2d9b5;
+  --title-text-color: #073015;
+}
+.light-mode [data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=info], [data-mode=light] [data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=info] {
+  --background-color: #eef7f8;
+  --border-color: #9fd6da;
+  --text-color: #042e31;
+  --title-background-color: #9fd6da;
+  --title-border-color: #9fd6da;
+  --title-text-color: #042e31;
+}
+.light-mode [data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=warning], [data-mode=light] [data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=warning] {
+  --background-color: #fff8ee;
+  --border-color: #ffdca0;
+  --text-color: #4c3205;
+  --title-background-color: #ffdca0;
+  --title-border-color: #ffdca0;
+  --title-text-color: #4c3205;
+}
+.light-mode [data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=danger], [data-mode=light] [data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=danger] {
+  --background-color: #fcf0ef;
+  --border-color: #f1a9a9;
+  --text-color: #420c0c;
+  --title-background-color: #f1a9a9;
+  --title-border-color: #f1a9a9;
+  --title-text-color: #420c0c;
+}
+.light-mode [data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=error], [data-mode=light] [data-tooltips-element=tooltip][data-tooltips-theme=dark-automatic][data-tooltips-style=error] {
+  --background-color: #fcf0ef;
+  --border-color: #f1a9a9;
+  --text-color: #420c0c;
+  --title-background-color: #f1a9a9;
+  --title-border-color: #f1a9a9;
+  --title-text-color: #420c0c;
+}

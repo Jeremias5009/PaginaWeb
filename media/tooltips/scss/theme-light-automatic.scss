@@ -1,0 +1,16 @@
+/**
+ * [Copyright Regular Labs]
+ */
+
+[data-tooltips-element="tooltip"][data-tooltips-theme="light-automatic"] {
+    @import "styling-light";
+
+    @media screen and (prefers-color-scheme: dark) {
+        @import "styling-dark";
+    }
+
+    .dark-mode &,
+    [data-mode="dark"] & {
+        @import "styling-dark";
+    }
+}

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="4" type="plugin" group="system" method="upgrade">
+  <name>PLG_SYSTEM_TOOLTIPS</name>
+  <description>PLG_SYSTEM_TOOLTIPS_DESC</description>
+  <version>9.2.1</version>
+  <creationDate>July 2024</creationDate>
+  <author>Regular Labs (Peter van Westen)</author>
+  <authorEmail>info@regularlabs.com</authorEmail>
+  <authorUrl>https://regularlabs.com</authorUrl>
+  <copyright>Copyright © 2024 Regular Labs - All Rights Reserved</copyright>
+  <license>GNU General Public License version 2 or later</license>
+  <namespace path="src">RegularLabs\Plugin\System\Tooltips</namespace>
+  <scriptfile>script.install.php</scriptfile>
+  <files>
+    <file plugin="tooltips">tooltips.php</file>
+    <folder>language</folder>
+    <folder>src</folder>
+  </files>
+  <media folder="media" destination="tooltips">
+    <folder>css</folder>
+    <folder>js</folder>
+    <folder>scss</folder>
+  </media>
+  <config>
+    <fields name="params" addfieldprefix="RegularLabs\Library\Form\Field">
+      <fieldset name="basic">
+        <field name="@load_script_descriptions" type="LoadMedia" filetype="script" file="regularlabs.admin-form-descriptions"/>
+        <field name="@load_language_regularlabs" type="LoadLanguage" extension="plg_system_regularlabs"/>
+        <field name="@license" type="License" extension="TOOLTIPS"/>
+        <field name="@version" type="Version" extension="TOOLTIPS"/>
+        <field name="@header" type="Header" label="TOOLTIPS" description="TOOLTIPS_DESC" url="https://regularlabs.com/tooltips"/>
+      </fieldset>
+      <fieldset name="RL_STYLING">
+        <field name="theme" type="List" default="light" class="w-auto" label="RL_THEME" description="RL_THEME_DESC" overridable="theme">
+          <option value="dark">TT_THEME_DARK</option>
+          <option value="light">TT_THEME_LIGHT</option>
+          <option value="custom">RL_CUSTOM</option>
+          <option disabled="disabled">---</option>
+          <option disabled="disabled">RL_ONLY_AVAILABLE_IN_PRO_LIST_OPTION</option>
+          <option disabled="disabled" value="dark-automatic">TT_THEME_AUTOMATIC_DARK</option>
+          <option disabled="disabled" value="light-automatic">TT_THEME_AUTOMATIC_LIGHT</option>
+        </field>
+        <field name="load_stylesheet" type="Radio" layout="joomla.form.field.radio.switcher" default="1" label="RL_LOAD_STYLESHEET" description="RL_LOAD_STYLESHEET_DESC">
+          <option value="0">JNO</option>
+          <option value="1">JYES</option>
+        </field>
+        <field name="@position" type="Radio" default="top" class="btn-group" label="TT_POSITION" description="%s&lt;br&gt;&lt;br&gt;%s,TT_POSITION_DESC,RL_ONLY_AVAILABLE_IN_PRO">&gt;
+                    <option value="top" class="btn btn-outline-info">RL_TOP</option>
+                    <option value="bottom" class="btn btn-outline-info" disabled="disabled">RL_BOTTOM</option>
+                    <option value="left" class="btn btn-outline-info" disabled="disabled">RL_LEFT</option>
+                    <option value="right" class="btn btn-outline-info" disabled="disabled">RL_RIGHT</option>
+                </field>
+        <field name="@effect" type="Radio" default="none" class="btn-group" label="TT_EFFECT" description="%s&lt;br&gt;&lt;br&gt;%s,TT_EFFECT_DESC,RL_ONLY_AVAILABLE_IN_PRO">
+          <option value="none" class="btn btn-outline-danger">TT_EFFECT_NONE</option>
+          <option value="fade" class="btn btn-outline-info" disabled="disabled">TT_EFFECT_FADE</option>
+          <option value="zoom" class="btn btn-outline-info" disabled="disabled">TT_EFFECT_ZOOM</option>
+        </field>
+      </fieldset>
+      <fieldset name="RL_SETTINGS_EDITOR_BUTTON">
+        <field name="button_text" type="Text" default="Tooltip" label="RL_BUTTON_TEXT" description="RL_BUTTON_TEXT_DESC"/>
+        <field name="enable_frontend" type="Radio" layout="joomla.form.field.radio.switcher" default="1" label="RL_ENABLE_IN_FRONTEND" description="RL_ENABLE_IN_FRONTEND_DESC">
+          <option value="0">JNO</option>
+          <option value="1">JYES</option>
+        </field>
+      </fieldset>
+      <fieldset name="RL_TAG_SYNTAX">
+        <field name="tag" type="Text" default="tip" label="TT_TAG" description="TT_TAG_DESC"/>
+        <field name="tag_characters" type="List" default="{.}" class="w-auto" label="RL_TAG_CHARACTERS" description="RL_TAG_CHARACTERS_DESC">
+          <option value="{.}">{...}</option>
+          <option value="[.]">[...]</option>
+          <option value="«.»">«...»</option>
+          <option value="{{.}}">{{...}}</option>
+          <option value="[[.]]">[[...]]</option>
+          <option value="[:.:]">[:...:]</option>
+          <option value="[%.%]">[%...%]</option>
+        </field>
+      </fieldset>
+      <fieldset name="advanced">
+        <field name="@note__mode" type="OnlyPro" label="TT_MODE" description="TT_MODE_DESC"/>
+        <field name="@note__disabled_components" type="OnlyPro" label="RL_DISABLE_ON_COMPONENTS" description="RL_DISABLE_ON_COMPONENTS_DESC"/>
+        <field name="enable_admin" type="Radio" layout="joomla.form.field.radio.switcher" default="0" label="RL_ENABLE_IN_ADMIN" description="RL_ENABLE_IN_ADMIN_DESC">
+          <option value="0">JNO</option>
+          <option value="1">JYES</option>
+        </field>
+        <field name="place_comments" type="Radio" layout="joomla.form.field.radio.switcher" default="1" label="RL_PLACE_HTML_COMMENTS" description="RL_PLACE_HTML_COMMENTS_DESC">
+          <option value="0">JNO</option>
+          <option value="1">JYES</option>
+        </field>
+      </fieldset>
+    </fields>
+  </config>
+</extension>

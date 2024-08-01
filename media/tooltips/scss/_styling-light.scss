@@ -1,0 +1,22 @@
+@import "variables";
+@import "mixins";
+
+& {
+    --background-color:       #{$rl-white};
+    --border-color:           #{rl-color(gray, 300)};
+    --text-color:             #{rl-color(gray, 900)};
+
+    --title-background-color: #{rl-color(gray, 100)};
+    --title-border-color:     #{rl-color(gray, 100)};
+    --title-text-color:       #{rl-color(gray, 900)};
+
+    @include colors(100, 300, 900, 300, 300, 900);
+    @include color("black", rl-color(gray, 100), rl-color(gray, 600), rl-color(gray, 900), rl-color(gray, 900), rl-color(gray, 900), rl-color(gray, 200));
+
+    @include color("primary", rl-color(blue, 100), rl-color(blue, 300), rl-color(blue, 900), rl-color(blue, 300), rl-color(blue, 300), rl-color(blue, 900));
+    @include color("success", rl-color(green, 100), rl-color(green, 300), rl-color(green, 900), rl-color(green, 300), rl-color(green, 300), rl-color(green, 900));
+    @include color("info", rl-color(teal, 100), rl-color(teal, 300), rl-color(teal, 900), rl-color(teal, 300), rl-color(teal, 300), rl-color(teal, 900));
+    @include color("warning", rl-color(yellow, 100), rl-color(yellow, 300), rl-color(yellow, 900), rl-color(yellow, 300), rl-color(yellow, 300), rl-color(yellow, 900));
+    @include color("danger", rl-color(red, 100), rl-color(red, 300), rl-color(red, 900), rl-color(red, 300), rl-color(red, 300), rl-color(red, 900));
+    @include color("error", rl-color(red, 100), rl-color(red, 300), rl-color(red, 900), rl-color(red, 300), rl-color(red, 300), rl-color(red, 900));
+}

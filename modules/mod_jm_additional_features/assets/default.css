@@ -1,0 +1,239 @@
+.jmm-add-features.default .jmm-items {
+	margin: 0px;
+	align-items: center;
+	padding-top: 20px;
+}
+
+.jmm-add-features.default .jmm-item {
+	float: left;
+	padding: 15px;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html[dir='rtl'] .jmm-add-features.default .jmm-item {
+	float: right;
+}
+
+.jmm-add-features.default .jmm-icon {
+	font-size: 30px;
+	color: inherit;
+	text-align: center;
+	flex-shrink: 0;
+}
+
+.jmm-add-features.default.iposition-def-left .jmm-item-in,
+.jmm-add-features.default.iposition-def-right .jmm-item-in,
+.jmm-add-features.default .iposition-left .jmm-item-in
+.jmm-add-features.default .iposition-right .jmm-item-in {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+
+.jmm-add-features.default .iposition-above .jmm-item-in {
+	display: block;
+}
+
+.jmm-add-features.default.iposition-def-left .jmm-icon,
+.jmm-add-features.default .iposition-left .jmm-icon {
+	padding-left: 0;
+	padding-right: 30px;
+}
+
+html[dir='rtl'] .jmm-add-features.default.iposition-def-left .jmm-icon,
+html[dir='rtl'] .jmm-add-features.default .iposition-left .jmm-icon {
+	padding-right: 0;
+	padding-left: 30px;
+}
+
+.jmm-add-features.default.iposition-def-right .jmm-item-in,
+.jmm-add-features.default .iposition-right .jmm-item-in {
+	flex-direction: row-reverse;
+}
+
+.jmm-add-features.default.iposition-def-right .jmm-icon,
+.jmm-add-features.default .iposition-right .jmm-icon {
+	padding-left: 30px;
+	padding-right: 0;
+}
+
+html[dir='rtl'] .jmm-add-features.default.iposition-def-right .jmm-icon,
+html[dir='rtl'] .jmm-add-features.default .iposition-right .jmm-icon {
+	padding-left: 0;
+	padding-right: 30px;
+}
+
+.jmm-add-features.default.iposition-def-above .jmm-icon,
+.jmm-add-features.default .iposition-above .jmm-icon {
+	padding: 0 0 20px;
+}
+
+.jmm-add-features.default .jmm-icon a {
+	color: inherit;
+}
+
+.jmm-add-features.default.jmm-icon img {
+	max-width: 100%;
+	height: auto;
+}
+
+.jmm-add-features.default [data-linked] {
+	cursor: pointer;
+}
+
+.jmm-add-features.default .jmm-title {
+	font-weight: bold;
+	line-height: 1.1;
+}
+
+
+/*configuraci�n personalizada*/
+
+.jmm-add-features.default .jmm-title a {
+	text-align: center !important;
+	text-decoration: none;
+	display: -webkit-box;
+	-webkit-line-clamp: 4;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-size: 1em;
+	font-weight: 700 !important;
+	font-weight: bold;
+
+}
+
+.jmm-add-features.default .jmm-title + .jmm-text {
+	margin-top: 15px
+}
+
+.jmm-add-features.default .jmm-button {
+	margin-top: 45px
+}
+
+.jmm-add-features.default .jmm-text-bottom {
+	margin-top: 20px;
+}
+
+@media (max-width: 767px) {
+	.jmm-add-features.default.iposition-def-left .jmm-item-in,
+	.jmm-add-features.default.iposition-def-right .jmm-item-in {
+		display: block;
+	}
+	.jmm-add-features.default.iposition-def-left .jmm-icon,
+	.jmm-add-features.default.iposition-def-right .jmm-icon {
+		padding: 0 0 20px;
+	}
+}
+
+.jmm-add-features.default .sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0,0,0,0);
+	border: 0;
+}
+
+.jmm-add-features.default .jmm-row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.jmm-add-features.default .rows-1 > div > .jmm-item {
+	width: 100%;
+}
+
+.jmm-add-features.default .rows-2 > div > .jmm-item {
+	width: 50%;
+}
+
+.jmm-add-features.default .rows-3 > div > .jmm-item {
+	width: 50.33%;
+}
+
+.jmm-add-features.default .rows-4 > div > .jmm-item {
+	width: 25%;
+}
+
+.jmm-add-features.default .rows-5 > div > .jmm-item {
+	width: 20%;
+}
+
+.jmm-add-features.default .rows-6 > div > .jmm-item {
+	width: 16.66%;
+}
+
+.jmm-add-features.default .rows-7 > div > .jmm-item {
+	width: 14.28%;
+}
+
+.jmm-add-features.default .rows-8 > div > .jmm-item {
+	width: 12.5%;
+}
+
+.jmm-add-features.default .rows-9 > div > .jmm-item {
+	width: 11.11%;
+}
+
+.jmm-add-features.default .rows-10 > div > .jmm-item {
+	width: 10%;
+}
+
+.jmm-add-features.default .rows-11 > div > .jmm-item {
+	width: 9.09%;
+}
+
+.jmm-add-features.default .rows-12 > div > .jmm-item {
+	width: 8.33%;
+}
+
+@media (max-width: 767px) {
+	.jmm-add-features.default [class*='rows-'] > div > .jmm-item {
+		width: 100%;
+	}
+} 
+
+.jmm-row{
+padding-bottom: 10px !important; 
+padding-top: 10px !important;
+display:flex;
+}
+
+.jmm-item{
+	border-radius: 12px;
+	margin-right: 20px;
+	box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+	transition: all 0.5s ease-out;
+}
+
+.jmm-text{
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  
+}
+
+.jmm-add-features.default .jmm-item:hover { 
+	background-color: #dce3e9;
+	/*background-image: linear-gradient(180deg, #A9C9FF 5%, #d4d5df 55%);*/
+	background-size: 100% 100%;
+	display:flex;
+	align-items:center;
+	justify-content:center;	
+	/*box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;*/
+	box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+}
+
+.enlace-sin-subrayado {
+	text-decoration: none;
+}

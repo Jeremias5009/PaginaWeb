@@ -1,0 +1,7 @@
+@function getColor($color_name, $value) {
+    @if (type-of($value) == "number") {
+        @return rl-color($color_name, $value);
+    }
+
+    @return $value;
+}
