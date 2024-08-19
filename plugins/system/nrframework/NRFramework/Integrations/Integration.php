@@ -301,7 +301,7 @@ class Integration
 
 			if (array_key_exists($needle, $haystack))
 			{
-				$found = trim($haystack[$needle]);
+				$found = is_string($haystack[$needle]) ? trim($haystack[$needle]) : $haystack[$needle];
 				break;
 			}
 		}

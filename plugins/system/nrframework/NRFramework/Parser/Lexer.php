@@ -89,6 +89,7 @@ abstract class Lexer
        // inititalize state
        $this->state                     = new \StdClass();
        $this->state->skip_whitespace    = true;
+       $this->state->tokenize_content   = false;
    }
 
    /**
@@ -133,10 +134,32 @@ abstract class Lexer
     *  @param boolean $skip
     *  @return void
     */
-   public function skipWhitespace($skip = true)
+   public function setSkipWhitespaceState($skip = true)
    {
        $this->state->skip_whitespace = $skip;
    }
+
+   /**
+    * Sets the tokenize_content state
+    * 
+    * @param bool 
+    * @return void
+    */
+    public function setTokenizeContentState($state = true)
+    {
+        $this->state->tokenize_content = $state;
+    }
+
+    /**
+    * Gets the tokenize_content state
+    * 
+    * @param bool 
+    * @return bool
+    */
+    public function getTokenizeContentState()
+    {
+        return $this->state->tokenize_content;
+    }
 
    /**
     *  Marks the current index

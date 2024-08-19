@@ -2,7 +2,7 @@
 
 /**
  * @package         Convert Forms
- * @version         4.4.3 Free
+ * @version         4.4.4 Free
  * 
  * @author          Tassos Marinos <info@tassos.gr>
  * @link            https://www.tassos.gr
@@ -66,6 +66,11 @@ class Migrator
         {
             $item->params = new Registry($item->params);
 
+            if (version_compare($this->installedVersion, '4.4.4', '<='))
+            {
+                $this->fixNewEditorValueInTasks($item);
+            }
+
             if (version_compare($this->installedVersion, '4.0.2', '<')) 
             {
                 $this->fixInputMask($item);
@@ -83,6 +88,44 @@ class Migrator
             $this->db->updateObject('#__convertforms', $item, 'id');
         }
 	}
+
+    private function fixNewEditorValueInTasks(&$item)
+    {
+        if (!$tasks = \ConvertForms\Tasks\ModelTasks::getItems($item->id))
+        {
+            return;
+        }
+
+        if (!$tasks || !is_array($tasks) || !count($tasks))
+        {
+            return;
+        }
+        
+        $allowedApps = [
+            
+            'email'
+        ];
+
+        foreach ($tasks as $ordering => $_task)
+        {
+            if (!in_array($_task['app'], $allowedApps))
+            {
+                continue;
+            }
+
+            
+
+            if ($_task['app'] === 'email')
+            {
+                $_task['options']['body'] = str_replace(["\r\n", "\r", "\n"], '<br>', $_task['options']['body']);
+            }
+
+            // Update task
+            $_task['ordering'] = $ordering;
+            $_task['form_id'] = $item->id;
+            \ConvertForms\Tasks\ModelTasks::save($_task);
+        }
+    }
 
     private function fixInputMask(&$item)
     {

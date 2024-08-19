@@ -24,7 +24,7 @@ class Geo
 
     	if (!is_dir($path))
     	{
-    		return;
+    		return '';
     	}
 
     	if (!class_exists('TGeoIP'))

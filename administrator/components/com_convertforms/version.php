@@ -2,7 +2,7 @@
 
 /**
  * @package         Convert Forms
- * @version         4.4.3 Free
+ * @version         4.4.4 Free
  *
  * @author          Tassos Marinos <info@tassos.gr>
  * @link            https://www.tassos.gr
@@ -12,5 +12,5 @@
 
 defined('_JEXEC') or die('Restricted Access');
 $NR_PRO = "0";
-$RELEASE_DATE = "2024-07-09";
+$RELEASE_DATE = "2024-08-05";
 ?>

@@ -2,7 +2,7 @@
 
 /**
  * @package         Convert Forms
- * @version         4.4.3 Free
+ * @version         4.4.4 Free
  * 
  * @author          Tassos Marinos <info@tassos.gr>
  * @link            https://www.tassos.gr
@@ -29,6 +29,7 @@ class JFormFieldTFPhoneControl extends TextField
     {
         $this->assets();
         
+        $aria_label = $this->element['aria_label'] ? (string) $this->element['aria_label'] : '';
         $class = $this->element['class'] ? (string) $this->element['class'] : '';
         $input_class = $this->element['input_class'] ? (string) $this->element['input_class'] : '';
         $inputmask = $this->element['inputmask'] ? (string) $this->element['inputmask'] : '';
@@ -67,6 +68,7 @@ class JFormFieldTFPhoneControl extends TextField
             'readonly' => $this->readonly,
             'placeholder' => (string) $this->element['placeholder'],
             'browserautocomplete' => (string) $this->element['browserautocomplete'] !== '1',
+            'aria_label' => $aria_label
         ];
 
         $layout = new FileLayout('phonecontrol', JPATH_PLUGINS . '/system/nrframework/layouts/controls');

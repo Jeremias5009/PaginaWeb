@@ -49,12 +49,20 @@ class ActiveCampaign extends Integration
 		$data = [
 			'contact' => [
 				'email'     => $email,
-				'firstName' => isset($name[0]) ? $name[0] : null,
-			    'lastName'  => isset($name[1]) ? $name[1] : null,
-				'phone'		=> $this->getCustomFieldValue('phone', $customfields),
+				'phone'		=> $this->getPhone($customfields),
 				'ip4' 		=> \NRFramework\User::getIP()
 			],
 		];
+
+		// Add first and last name only if they are not empty, as ActiveCampaign will empty the fields if they are empty.
+		if (isset($name[0]) && $name[0])
+		{
+			$data['contact']['firstName'] = $name[0];
+		}
+		if (isset($name[1]) && $name[1])
+		{
+			$data['contact']['lastName'] = $name[1];
+		}
 
 		$this->post($apiAction, $data);
 
@@ -84,6 +92,37 @@ class ActiveCampaign extends Integration
 
 		// Add Custom Fields to Contact
 		$this->addCustomFieldsToContact($customfields, $contact_id);
+	}
+
+	/**
+	 * Returns the phone number of the contact.
+	 * 
+	 * @param   array   $customfields
+	 * 
+	 * @return  string
+	 */
+	private function getPhone($customfields)
+	{
+		$phone = $this->getCustomFieldValue('phone', $customfields);
+
+		if (is_string($phone))
+		{
+			return $phone;
+		}
+	
+		if (isset($phone['code']) && isset($phone['value']) && $phone['value'])
+		{
+			$calling_code = \NRFramework\Countries::getCallingCodeByCountryCode($phone['code']);
+			$calling_code = $calling_code !== '' ? '+' . $calling_code : '';
+			
+			$phone = $calling_code . $phone['value'];
+		}
+		else
+		{
+			$phone = '';
+		}
+
+		return $phone;
 	}
 
 	/**

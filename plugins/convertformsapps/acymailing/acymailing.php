@@ -2,7 +2,7 @@
 
 /**
  * @package         Convert Forms
- * @version         4.4.3 Free
+ * @version         4.4.4 Free
  * 
  * @author          Tassos Marinos <info@tassos.gr>
  * @link            https://www.tassos.gr
@@ -50,6 +50,8 @@ class plgConvertFormsAppsAcyMailing extends App
 	 */
 	public function actionSubscribe()
 	{
+        @include_once implode(DIRECTORY_SEPARATOR, [JPATH_ADMINISTRATOR, 'components', 'com_acym', 'helpers', 'helper.php']);
+        
         // Calculate merge tags
         $keysToRemove = [
             'lists',
@@ -112,6 +114,8 @@ class plgConvertFormsAppsAcyMailing extends App
      */
 	public function getActionSubscribeSetupFields()
 	{
+        @include_once implode(DIRECTORY_SEPARATOR, [JPATH_ADMINISTRATOR, 'components', 'com_acym', 'helpers', 'helper.php']);
+
         $mergeTags = [
             $this->commonField('email')
         ];

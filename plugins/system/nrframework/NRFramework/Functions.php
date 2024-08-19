@@ -500,6 +500,17 @@ class Functions
         return $basePath;
     }
 
+    public static function renderModulePosition($position, $style = 'custom')
+    {
+        $modules = ModuleHelper::getModules($position);
+
+        $attribs['style'] = $style;
+        foreach ($modules as $module)
+        {
+            echo ModuleHelper::renderModule($module, $attribs);
+        }
+    }
+
     public static function loadModule($id, $moduleStyle = null)
     {  
         // Return if no module id passed

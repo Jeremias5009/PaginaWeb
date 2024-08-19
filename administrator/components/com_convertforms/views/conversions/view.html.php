@@ -2,7 +2,7 @@
 
 /**
  * @package         Convert Forms
- * @version         4.4.3 Free
+ * @version         4.4.4 Free
  * 
  * @author          Tassos Marinos <info@tassos.gr>
  * @link            https://www.tassos.gr
@@ -95,6 +95,7 @@ class ConvertFormsViewConversions extends HtmlView
             {
                 $childBar->publish('conversions.publish')->listCheck(true);
                 $childBar->unpublish('conversions.unpublish')->listCheck(true);
+                $childBar->archive('conversions.archive')->listCheck(true);
                 $childBar->trash('conversions.trash')->listCheck(true);
             }
 

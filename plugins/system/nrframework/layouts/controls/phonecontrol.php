@@ -2,7 +2,7 @@
 
 /**
  * @package         Convert Forms
- * @version         4.4.3 Free
+ * @version         4.4.4 Free
  * 
  * @author          Tassos Marinos <info@tassos.gr>
  * @link            https://www.tassos.gr
@@ -50,6 +50,9 @@ if ($inputmask)
 	<select
 		class="tf-phone-control--flag--selector noChosen"
 		name="<?php echo $name ?>[code]"
+		<?php if ($aria_label): ?>
+		aria-label="<?php echo htmlspecialchars($aria_label, ENT_COMPAT, 'UTF-8'); ?>"
+		<?php endif; ?>
 		>
 		<?php
 		foreach ($countries as $key => $country)
@@ -63,6 +66,7 @@ if ($inputmask)
 	<input
 		type="tel"
 		class="tf-phone-control--number<?php echo !empty($input_class) ? ' ' . $input_class : ''; ?>"
+		id="<?php echo $id; ?>"
 		<?php echo $inputmask ? ' data-imask="' . $inputmask . '"' : ''; ?>
 		<?php echo $required ? ' required' : ''; ?>
 		<?php echo $readonly ? ' readonly' : ''; ?>

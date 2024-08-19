@@ -220,7 +220,7 @@ class GalleryManager2
 	}
 
 	/**
-	 * Moves all given `tmp` items over to the destination folder.
+	 * Moves all given temp items over to the destination folder.
 	 * 
 	 * @param   array   $value
 	 * @param   object  $field
@@ -279,7 +279,10 @@ class GalleryManager2
 			'full' => $field->fieldparams->get('lightbox', '0') === '1'
 		];
 
-		// Move all files from `tmp` folder over to the `upload folder`
+		$tmpdir = Factory::getConfig()->get('tmp_path');
+		$tmpRelativeDirectory = ltrim(str_replace(JPATH_ROOT, '', $tmpdir), $ds);
+
+		// Move all files from the temp folder over to the `upload folder`
 		foreach ($items as $key => &$item)
 		{
 			/**
@@ -294,9 +297,9 @@ class GalleryManager2
 				continue;
 			}
 
-			// Skip if source does not start with "tmp/"
+			// Skip if source does not start with the temp relative directory
 			$testSourcePath = ltrim(rtrim($item['source'], $ds), $ds) . $ds;
-			if (!Functions::startsWith($testSourcePath, 'tmp/'))
+			if (!Functions::startsWith($testSourcePath, $tmpRelativeDirectory . $ds))
 			{
 				continue;
 			}

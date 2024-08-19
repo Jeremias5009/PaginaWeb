@@ -39,14 +39,6 @@
     </fieldset>
     <fieldset name="advanced" label="Advanced" addfieldpath="/administrator/components/com_convertforms/models/forms/fields">
         
-        <field name="executeoutputoverride" default="0" class="btn-group btn-group-yesno" type="radio" label="NR_EXECUTE_ON_OUTPUT_OVERRIDE" description="NR_EXECUTE_ON_OUTPUT_OVERRIDE_DESC">
-            <option value="1">JYES</option>
-            <option value="0">JNO</option>
-        </field>
-        <field name="executeonformat" default="0" class="btn-group btn-group-yesno" type="radio" label="NR_EXECUTE_ON_FORMAT_OVERRIDE" description="NR_EXECUTE_ON_FORMAT_OVERRIDE_DESC">
-            <option value="1">JYES</option>
-            <option value="0">JNO</option>
-        </field>
     </fieldset>
     <fieldset name="recaptcha" label="reCAPTCHA" description="NR_RECAPTCHA_DESC">
         <field name="1" type="note" label="Checkbox reCAPTCHA v2" />
@@ -92,6 +84,18 @@
         <field name="hcaptcha_secretkey" type="text" 
             label="NR_RECAPTCHA_SECRET_KEY"
             description="NR_HCAPTCHA_SECRET_KEY_DESC"
+            class="input-xxlarge"
+        />
+    </fieldset>
+    <fieldset name="turnstile" label="Turnstile" description="COM_CONVERTFORMS_TURNSTILE_DESC">
+        <field name="turnstile_sitekey" type="text" 
+            label="NR_RECAPTCHA_SITE_KEY"
+            description="NR_RECAPTCHA_SITE_KEY_DESC"
+            class="input-xxlarge"
+        />
+        <field name="turnstile_secretkey" type="text" 
+            label="NR_RECAPTCHA_SECRET_KEY"
+            description="COM_CONVERTFORMS_TURNSTILE_SECRET_KEY_DESC"
             class="input-xxlarge"
         />
     </fieldset>

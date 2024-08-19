@@ -100,16 +100,19 @@ class ShortcodeLexer extends Lexer
 
             if ($this->predictScOpen())
             {
+                $this->setTokenizeContentState(false);
+                $this->setSkipWhitespaceState(true);
                 return $this->sc_open();
             }
             else if ($this->predictScClose())
             {
+                $this->setTokenizeContentState(true);
+                $this->setSkipWhitespaceState(false);
                 return $this->sc_close();
             }  
             // check for if/endif
             else if ($this->predictIf(false))
             {
-                $if_flag = true;
                 return $this->_if();
             }
             else if ($this->predictEndif(false))
@@ -118,8 +121,8 @@ class ShortcodeLexer extends Lexer
             }
             // check for text
             else {
-                $token   = $this->text($if_flag);
-                $if_flag = false; 
+                $preserve_quoted_values = !$this->getTokenizeContentState();
+                $token  = $this->text($preserve_quoted_values);
                 return $token;
             }
         }
@@ -128,7 +131,7 @@ class ShortcodeLexer extends Lexer
     }
 
     /**
-     *  Predicts an upcoming if keyword from the input stream
+     *  Predicts an upcoming 'if' keyword from the input stream
      *
      *  @param  bool $reset Reset to the marked position when the keyword is found
      *  @return bool
@@ -151,7 +154,7 @@ class ShortcodeLexer extends Lexer
     }
 
     /**
-     *  Predicts an upcoming endif keyword from the input stream
+     *  Predicts an upcoming 'endif' keyword from the input stream
      *
      *  @param  bool $reset Reset to the marked position when the keyword is found
      *  @return bool

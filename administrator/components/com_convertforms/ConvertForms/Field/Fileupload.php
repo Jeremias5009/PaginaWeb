@@ -2,7 +2,7 @@
 
 /**
  * @package         Convert Forms
- * @version         4.4.3 Free
+ * @version         4.4.4 Free
  * 
  * @author          Tassos Marinos <info@tassos.gr>
  * @link            https://www.tassos.gr
@@ -144,6 +144,9 @@ class FileUpload extends \ConvertForms\Field
 			{
 				try
 				{
+					set_time_limit(300); // 5 Minutes
+					ini_set('memory_limit', '-1');
+					
 					// get the data
 					$tmpData = $data;
 					if (defined('nrJ4'))

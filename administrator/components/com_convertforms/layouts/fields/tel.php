@@ -2,7 +2,7 @@
 
 /**
  * @package         Convert Forms
- * @version         4.4.3 Free
+ * @version         4.4.4 Free
  * 
  * @author          Tassos Marinos <info@tassos.gr>
  * @link            https://www.tassos.gr
@@ -22,10 +22,12 @@ $inputmask = isset($field->inputmask['custom']) ? $field->inputmask['custom'] : 
 
 $element = new \SimpleXMLElement('
 	<field
+		id="' . $field->input_id . '"
 		name="' . $field->input_name . '"
 		required="' . ($field->required === '1') . '"
 		readonly="' . ($field->readonly === '1') . '"
 		placeholder="' . $field->placeholder . '"
+		aria_label="' . $field->label . '"
 		inputmask="' . $inputmask . '"
 		browserautocomplete="' . ($field->browserautocomplete === '1') . '"
 		input_class="cf-input ' . $field->inputcssclass . '"

@@ -66,6 +66,9 @@ class Widget
 
 		// The extension name where the widget is loaded from.
 		'extension' => '',
+
+		// The aria-label attribute
+		'aria_label' => '',
 		
 		// Whether we are rendering the Pro version of the widget
 		'pro' => false

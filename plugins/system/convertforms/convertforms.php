@@ -2,7 +2,7 @@
 
 /**
  * @package         Convert Forms
- * @version         4.4.3 Free
+ * @version         4.4.4 Free
  * 
  * @author          Tassos Marinos <info@tassos.gr>
  * @link            https://www.tassos.gr
@@ -80,8 +80,6 @@ class PlgSystemConvertForms extends CMSPlugin
         {   
             return;
         }
-
-        $this->param = $component->params;
 
         // Load required classes
         if (!$this->loadClasses())
@@ -420,18 +418,6 @@ class PlgSystemConvertForms extends CMSPlugin
 
         // Return if we are not in frontend
         if (!$this->app->isClient('site'))
-        {
-            return false;
-        }
-
-        // Handle the component execution when the tmpl request paramter is overriden
-        if (!$this->param->get("executeoutputoverride", false) && $this->app->input->get('tmpl', null, "cmd") != null)
-        {
-            return false;
-        }
-
-        // Handle the component execution when the format request paramter is overriden
-        if (!$this->param->get("executeonformat", false) && $this->app->input->get('format', "html", "cmd") != "html")
         {
             return false;
         }

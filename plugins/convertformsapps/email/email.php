@@ -2,7 +2,7 @@
 
 /**
  * @package         Convert Forms
- * @version         4.4.3 Free
+ * @version         4.4.4 Free
  * 
  * @author          Tassos Marinos <info@tassos.gr>
  * @link            https://www.tassos.gr
@@ -62,10 +62,6 @@ class plgConvertFormsAppsEmail extends App
         // Support if shortcodes. For some reason, if run this after content.prepare, it fails.
         Helper::parseIfShortcode($this->options['body'], $this->payload['submission']);
 
-        // Since we are using a textarea, we need to convert new line characters to <br> to preserve new lines.
-        // Consider this is as a temporary workaround until we replace the textarea with a Rich Text editor.
-        $this->options['body'] = str_replace(["\r\n", "\r", "\n"], '<br>', $this->options['body']);
-
         $mailer = new Email($this->options);
 
         if (!$mailer->send())
@@ -93,7 +89,7 @@ class plgConvertFormsAppsEmail extends App
                     $this->field('reply_to_name', ['required' => false]),
                     $this->field('cc', ['required' => false]),
                     $this->field('bcc', ['required' => false]),
-                    $this->field('body', ['type' => 'textarea', 'value' => '{all_fields}']),
+                    $this->field('body', ['type' => 'editor', 'value' => '{all_fields}']),
                     $this->field('attachments', ['required' => false])
                 ]
             ]

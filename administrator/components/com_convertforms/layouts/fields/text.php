@@ -2,7 +2,7 @@
 
 /**
  * @package         Convert Forms
- * @version         4.4.3 Free
+ * @version         4.4.4 Free
  * 
  * @author          Tassos Marinos <info@tassos.gr>
  * @link            https://www.tassos.gr
@@ -15,6 +15,11 @@ defined('_JEXEC') or die('Restricted access');
 extract($displayData);
 ?>
 <input type="<?php echo $field->type; ?>" name="<?php echo $field->input_name ?>" id="<?php echo $field->input_id; ?>"
+	
+	<?php if (isset($field->hidelabel) && !empty($field->label)) { ?>
+		aria-label="<?php echo htmlspecialchars($field->label, ENT_COMPAT, 'UTF-8'); ?>"
+	<?php } ?>
+
 	<?php if (isset($field->required) && $field->required) { ?>
 		required
 		aria-required="true"

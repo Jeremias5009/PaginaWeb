@@ -45,17 +45,15 @@ class File
 		/**
 		 * Try transiterating the file name using the native php function
 		 * 
-		 * This is used in 4.0 version of makeSafe but not in 3.X.
-		 * 
 		 * If the given filename is non-latin, then all characters will be removed from the filename via makeSafe and thus
 		 * we wont be able to upload the file.
 		 * 
 		 * @see https://github.com/joomla/joomla-cms/pull/27974
 		 */
-		if (!defined('nrJ4') && function_exists('transliterator_transliterate') && function_exists('iconv'))
+		if (!defined('t_isJ5') && function_exists('transliterator_transliterate') && function_exists('iconv'))
 		{
 			// Using iconv to ignore characters that can't be transliterated
-			$file['name'] = iconv("UTF-8", "ASCII//TRANSLIT//IGNORE", transliterator_transliterate('Any-Latin; Latin-ASCII; Lower()', $file['name']));
+			$file['name'] = iconv("UTF-8", "ASCII//TRANSLIT//IGNORE", transliterator_transliterate('Any-Latin; Latin-ASCII;', $file['name']));
 		}
 		
 		// Sanitize filename
