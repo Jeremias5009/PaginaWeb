@@ -2,7 +2,7 @@
 
 /**
  * @package         Regular Labs Library
- * @version         24.6.22903
+ * @version         24.8.21262
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            https://regularlabs.com
@@ -192,7 +192,7 @@ class PluginTag
      */
     public static function getRegexSurroundingTagPost($elements = [])
     {
-        $elements = ($elements ?? null) ?: [...\RegularLabs\Library\Html::getBlockElements(), 'span'];
+        $elements = $elements ?? null ?: [...\RegularLabs\Library\Html::getBlockElements(), 'span'];
         return '(?:(?:\s*<br ?/?>)*\s*<\/(?:' . implode('|', $elements) . ')>)?';
     }
     /**
@@ -205,7 +205,7 @@ class PluginTag
      */
     public static function getRegexSurroundingTagPre($elements = [])
     {
-        $elements = ($elements ?? null) ?: [...\RegularLabs\Library\Html::getBlockElements(), 'span'];
+        $elements = $elements ?? null ?: [...\RegularLabs\Library\Html::getBlockElements(), 'span'];
         return '(?:<(?:' . implode('|', $elements) . ')(?: [^>]*)?>\s*(?:<br ?/?>\s*)*)?';
     }
     /**
@@ -218,9 +218,9 @@ class PluginTag
      *
      * @return string
      */
-    public static function getRegexSurroundingTagsPost($block_elements = [], $inline_elements = ['span'], $excluded_block_elements = [])
+    public static function getRegexSurroundingTagsPost($block_elements = [], $inline_elements = ['span', 'strong', 'b', 'em', 'i'], $excluded_block_elements = [])
     {
-        $block_elements = ($block_elements ?? null) ?: \RegularLabs\Library\Html::getBlockElements($excluded_block_elements);
+        $block_elements = $block_elements ?? null ?: \RegularLabs\Library\Html::getBlockElements($excluded_block_elements);
         $regex = '';
         if (!empty($inline_elements)) {
             $regex .= '(?:(?:\s*<br ?/?>)*\s*<\/(?:' . implode('|', $inline_elements) . ')>){0,3}';
@@ -238,9 +238,9 @@ class PluginTag
      *
      * @return string
      */
-    public static function getRegexSurroundingTagsPre($block_elements = [], $inline_elements = ['span'], $excluded_block_elements = [])
+    public static function getRegexSurroundingTagsPre($block_elements = [], $inline_elements = ['span', 'strong', 'b', 'em', 'i'], $excluded_block_elements = [])
     {
-        $block_elements = ($block_elements ?? null) ?: \RegularLabs\Library\Html::getBlockElements($excluded_block_elements);
+        $block_elements = $block_elements ?? null ?: \RegularLabs\Library\Html::getBlockElements($excluded_block_elements);
         $regex = '(?:<(?:' . implode('|', $block_elements) . ')(?: [^>]*)?>\s*(?:<br ?/?>\s*)*)?';
         if (!empty($inline_elements)) {
             $regex .= '(?:<(?:' . implode('|', $inline_elements) . ')(?: [^>]*)?>\s*(?:<br ?/?>\s*)*){0,3}';
@@ -261,7 +261,7 @@ class PluginTag
     public static function getRegexTags($tags, $include_no_attributes = \true, $include_ending = \true, $required_attributes = [])
     {
         $tags = \RegularLabs\Library\ArrayHelper::toArray($tags);
-        $tags = (count($tags) > 1) ? '(?:' . implode('|', $tags) . ')' : $tags[0];
+        $tags = count($tags) > 1 ? '(?:' . implode('|', $tags) . ')' : $tags[0];
         $value = '(?:\s*=\s*(?:"[^"]*"|\'[^\']*\'|[a-z0-9-_]+))?';
         $attributes = '(?:\s+[a-z0-9-_]+' . $value . ')+';
         $required_attributes = \RegularLabs\Library\ArrayHelper::toArray($required_attributes);
@@ -337,7 +337,7 @@ class PluginTag
     public static function unprotectSpecialChars(&$string, $keep_escaped_chars = null)
     {
         $unescaped_chars = array_keys(self::$protected_characters);
-        $keep_escaped_chars = (!is_null($keep_escaped_chars)) ? \RegularLabs\Library\ArrayHelper::toArray($keep_escaped_chars) : [];
+        $keep_escaped_chars = !is_null($keep_escaped_chars) ? \RegularLabs\Library\ArrayHelper::toArray($keep_escaped_chars) : [];
         if (!empty($keep_escaped_chars)) {
             array_walk($unescaped_chars, function (&$char, $key, $keep_escaped_chars) {
                 if (is_array($keep_escaped_chars) && !in_array($char, $keep_escaped_chars, \true)) {

@@ -2,7 +2,7 @@
 
 /**
  * @package         Regular Labs Library
- * @version         24.6.22903
+ * @version         24.8.21262
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            https://regularlabs.com
@@ -33,7 +33,7 @@ class SubformField extends JSubformField
             case 'layout':
                 $this->layout = (string) $value;
                 if (!$this->layout) {
-                    $this->layout = (!$this->multiple) ? 'joomla.form.field.subform.default' : 'regularlabs.form.field.subform.repeatable';
+                    $this->layout = !$this->multiple ? 'joomla.form.field.subform.default' : 'regularlabs.form.field.subform.repeatable';
                 }
                 break;
             default:

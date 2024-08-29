@@ -2,7 +2,7 @@
 
 /**
  * @package         Regular Labs Library
- * @version         24.6.22903
+ * @version         24.8.21262
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            https://regularlabs.com
@@ -252,9 +252,9 @@ class FormField extends JFormField
     protected function getLabel()
     {
         $this->element['label'] = $this->prepareText($this->element['label']);
-        return ($this->element['label'] == '---') ? '&nbsp;' : parent::getLabel();
+        return $this->element['label'] == '---' ? '&nbsp;' : parent::getLabel();
     }
-    protected function getListOptions(array $attributes): array
+    protected function getListOptions(array $attributes): array|int
     {
         return $this->getOptions();
     }
@@ -272,7 +272,7 @@ class FormField extends JFormField
         $options = [];
         foreach ($this->element->option as $option) {
             $value = (string) $option['value'];
-            $text = (trim((string) $option) != '') ? trim((string) $option) : $value;
+            $text = trim((string) $option) != '' ? trim((string) $option) : $value;
             $disabled = (string) $option['disabled'];
             $disabled = $disabled === 'true' || $disabled === 'disabled' || $disabled === '1';
             $disabled = $disabled || $this->readonly && $value != $this->value;

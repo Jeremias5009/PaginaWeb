@@ -7124,7 +7124,7 @@ textarea.form-control-lg {
 }
 .px-3 {
   padding-right: 1rem !important;
-  padding-left: 1rem !important;
+  /*padding-left: 1rem !important;*/
 }
 .px-4 {
   padding-right: 1.5rem !important;
@@ -11340,13 +11340,9 @@ header .logo-wrapper .site-tagline {
 }
 .astroid-header.has-sidebar .astroid-logo {
   margin: 0 auto !important;
-  justify-content: center;
 }
 .astroid-header.has-sidebar .astroid-sidebar-mobile-menu {
   display: none;
-}
-.astroid-header.has-sidebar .astroid-sidebar-block {
-  padding: 10px 15px;
 }
 @media (min-width: 1200px) {
   .astroid-header .astroid-sidebar-content {
@@ -11382,6 +11378,16 @@ header .logo-wrapper .site-tagline {
 }
 .astroid-header .astroid-sidebar-content {
   overflow-y: auto;
+}
+@media (min-width: 1200px) {
+  .astroid-header .astroid-sidebar-content {
+    padding: 15px 25px 20px;
+  }
+}
+@media (min-width: 1400px) {
+  .astroid-header .astroid-sidebar-content {
+    padding: 15px 35px 30px;
+  }
 }
 .astroid-header .astroid-sidebar-collapsable {
   padding: 1rem;
@@ -11659,7 +11665,7 @@ ul.megamenu-submenu > li > .megamenu-submenu {
   height: 0;
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
-  border-bottom: 8px solid #eee;
+  border-bottom: 8px solid var(--bs-border-color);
   z-index: 0;
   left: 50%;
   margin-left: -8px;
@@ -11671,44 +11677,55 @@ ul.megamenu-submenu > li > .megamenu-submenu {
   margin: 0;
   padding: 0;
 }
-.astroid-sidebar-menu li {
-  width: 100%;
+.astroid-sidebar-menu .nav-title {
   display: block;
-  border-bottom: 1px solid #dee2e6;
+}
+.astroid-sidebar-menu li {
+  display: block;
+  width: 100%;
+  margin: 5px 0;
+}
+.astroid-sidebar-menu li .nav-item-inner {
+  border-radius: var(--bs-border-radius);
 }
 .astroid-sidebar-menu li .as-menu-item {
-  padding: 10px;
-  width: calc(100% - 50px);
-  display: inline-block;
+  display: block;
+  padding: 5px 12px;
+  flex: auto;
 }
-.astroid-sidebar-menu li > ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  padding-left: 20px;
+.astroid-sidebar-menu li ul.nav-child {
   display: none;
-  border-top: 1px solid #eee;
+  list-style: none;
+  border-left: 1px dashed var(--bs-border-color);
+  margin-left: 20px;
+  padding-left: 15px;
 }
-.astroid-sidebar-menu li > ul li:last-child {
-  border-bottom: 0;
+.astroid-sidebar-menu li ul.nav-child > li > div.nav-item-inner > a {
+  position: relative;
+}
+.astroid-sidebar-menu li ul.nav-child > li > div.nav-item-inner > a:before {
+  content: "";
+  margin-right: 10px;
+  border-top: 1px dashed var(--bs-border-color);
+  width: 7px;
+  height: 1px;
+  position: absolute;
+  top: 50%;
+  left: -13px;
 }
 .astroid-sidebar-menu li.nav-item-active > ul {
   display: block;
 }
-.astroid-sidebar-menu li > .nav-item-caret {
-  width: 50px;
-  display: inline-block;
+.astroid-sidebar-menu li .nav-item-caret {
   font-size: 13px;
-  text-align: right;
-  padding: 10px;
+  padding: 5px 12px;
   cursor: pointer;
-  float: right;
   line-height: inherit;
 }
-.astroid-sidebar-menu li > .nav-item-caret:before {
+.astroid-sidebar-menu li .nav-item-caret:before {
   content: "";
 }
-.astroid-sidebar-menu li > .nav-item-caret.open:before {
+.astroid-sidebar-menu li .nav-item-caret.open:before {
   content: "";
 }
 .astroid-sidebar-menu li:last-child {
@@ -13056,6 +13073,21 @@ ul.pagenav li.previous {
 ul.pagenav li.next {
   float: right;
 }
+.text-small {
+  font-size: 0.875rem;
+}
+.ql-align-left {
+  text-align: left;
+}
+.ql-align-right {
+  text-align: right;
+}
+.ql-align-center {
+  text-align: center;
+}
+.as-image-effect {
+  transition: filter 0.3s ease-in-out;
+}
 [class*=as-width] {
   box-sizing: border-box;
   width: 100%;
@@ -13439,6 +13471,13 @@ ul.pagenav li.next {
   box-shadow: none !important;
   transition: box-shadow 0.1s ease-in-out;
 }
+.shadow-hover-popout {
+  transition: all 400ms;
+}
+.shadow-hover-popout:hover {
+  transform: translate(-0.5em, -0.5em);
+  box-shadow: 0.5em 0.5em 0 #003764;
+}
 @media (max-width: 575.98px) {
   .hideonxs {
     display: none !important;
@@ -13493,6 +13532,9 @@ ul.pagenav li.next {
   .w-auto\@xxl {
     width: auto !important;
   }
+}
+.as-transition-body {
+  transition: all 300ms;
 }
 @-webkit-keyframes slideInUp {
   from {
@@ -14427,6 +14469,23 @@ a.modal {
   border-right: 6px solid transparent;
 }
 .article-icon.article-icon-youtube:after {
+  height: 0;
+  width: 0;
+  border-left: 20px solid #fee8eb;
+  border-right: 20px solid #fee8eb;
+  border-bottom: 20px solid transparent;
+}
+.article-icon.article-icon-local {
+  background-color: #fee8eb;
+  color: #f23453;
+}
+.article-icon.article-icon-local:before {
+  height: 0;
+  width: 0;
+  border-bottom: 6px solid #fb9fab;
+  border-right: 6px solid transparent;
+}
+.article-icon.article-icon-local:after {
   height: 0;
   width: 0;
   border-left: 20px solid #fee8eb;
@@ -16020,6 +16079,32 @@ ul.tags .btn-sm, ul.tags .btn-group-sm > .btn, ul.tags div.jd-register-login-wra
   -ms-transform: scaleX(1);
   transform: scaleX(1);
 }
+.choices__button_joomla {
+  color: inherit;
+  text-indent: -9999px;
+  cursor: pointer;
+  opacity: 0.5;
+  appearance: none;
+  background: 0 0;
+  border: 0;
+  padding: 0 10px;
+  position: relative;
+}
+.choices__button_joomla:before {
+  text-align: center;
+  text-indent: 0;
+  content: "×";
+  display: block;
+  position: absolute;
+  inset: 0;
+}
+.choices__button_joomla:hover {
+  opacity: 1;
+}
+.choices__button_joomla:focus {
+  opacity: 1;
+  outline: none;
+}
 body div.mod-languages {
   z-index: 9999;
   position: relative;
@@ -16068,29 +16153,31 @@ body div.mod-languages ul.lang-block > li:not(:last-child) {
   right: 0;
   bottom: 0;
 }
-.astroid-img-cover:not(.col-12) > * {
-  position: absolute;
-  margin-bottom: 0;
+@media (max-width: 575.98px) {
+  .astroid-img-cover:not(.col-12) > * {
+    position: absolute;
+    margin-bottom: 0;
+  }
 }
-@media (min-width: 576px) {
+@media (min-width: 576px) and (max-width: 767.98px) {
   .astroid-img-cover:not(.col-sm-12) > * {
     position: absolute;
     margin-bottom: 0;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 991.98px) {
   .astroid-img-cover:not(.col-md-12) > * {
     position: absolute;
     margin-bottom: 0;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 992px) and (max-width: 1199.98px) {
   .astroid-img-cover:not(.col-lg-12) > * {
     position: absolute;
     margin-bottom: 0;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1200px) and (max-width: 1399.98px) {
   .astroid-img-cover:not(.col-xl-12) > * {
     position: absolute;
     margin-bottom: 0;

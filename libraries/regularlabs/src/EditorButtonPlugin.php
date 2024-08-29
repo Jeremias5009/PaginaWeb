@@ -2,7 +2,7 @@
 
 /**
  * @package         Regular Labs Library
- * @version         24.6.22903
+ * @version         24.8.21262
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            https://regularlabs.com
@@ -35,7 +35,7 @@ class EditorButtonPlugin extends JCMSPlugin
     public function __construct(JDispatcherInterface &$subject, array $config = [])
     {
         parent::__construct($subject, $config);
-        $this->popup_class = $this->popup_class ?: ('Plugin.EditorButton.' . $this->getShortName() . '.Popup');
+        $this->popup_class = $this->popup_class ?: 'Plugin.EditorButton.' . $this->getShortName() . '.Popup';
     }
     public function extraChecks($params)
     {
@@ -128,7 +128,7 @@ class EditorButtonPlugin extends JCMSPlugin
     }
     private function isInstalled(): bool
     {
-        $extensions = (!is_null($this->check_installed)) ? $this->check_installed : [$this->main_type];
+        $extensions = !is_null($this->check_installed) ? $this->check_installed : [$this->main_type];
         return \RegularLabs\Library\Extension::areInstalled($this->_name, $extensions);
     }
     private function passChecks(): bool

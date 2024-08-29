@@ -29,8 +29,8 @@ class ResizeCanvasCommand extends AbstractCommand
             $height = $original_height + $height;
         }
         // check for negative width/height
-        $width = ($width <= 0) ? $width + $original_width : $width;
-        $height = ($height <= 0) ? $height + $original_height : $height;
+        $width = $width <= 0 ? $width + $original_width : $width;
+        $height = $height <= 0 ? $height + $original_height : $height;
         // create new canvas
         $canvas = $image->getDriver()->newImage($width, $height, $bgcolor);
         // set copy position

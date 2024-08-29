@@ -1,7 +1,7 @@
 <?php
 /**
  * @package         Regular Labs Library
- * @version         24.6.22903
+ * @version         24.8.21262
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            https://regularlabs.com
@@ -12,7 +12,6 @@
 defined('_JEXEC') or die;
 
 use Joomla\CMS\Factory as JFactory;
-use Joomla\CMS\Table\Table;
 use Joomla\Registry\Registry as JRegistry;
 use RegularLabs\Library\Color as RL_Color;
 use RegularLabs\Library\Document as RL_Document;
@@ -143,41 +142,6 @@ class PlgSystemRegularLabs extends RL_SystemPlugin
         }
 
         return $field_class->$method($attributes);
-    }
-
-    /**
-     * @param string  $context The context
-     * @param Table   $item    The table
-     * @param boolean $isNew   Is new item
-     * @param array   $data    The validated data
-     *
-     * @return  void
-     */
-    public function onContentAfterSave($context, $item, $isNew, $data = []): void
-    {
-        if ( ! is_array($data) || empty($data['com_fields']) || ! empty($data['regularlabs_done']))
-        {
-            return;
-        }
-
-        $original_data = json_encode($data['com_fields']);
-
-        foreach ($data['com_fields'] as $field_name => &$field_value)
-        {
-            RL_FieldHelper::correctFieldValue($field_name, $field_value);
-        }
-
-        if ( ! ($item instanceof Table)
-            || $original_data == json_encode($data['com_fields']))
-        {
-            return;
-        }
-
-        $data['regularlabs_done'] = true;
-
-        JFactory::getApplication()->triggerEvent('onContentAfterSave', [
-            $context, $item, $isNew, $data
-        ]);
     }
 
     /**

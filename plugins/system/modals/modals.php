@@ -1,7 +1,7 @@
 <?php
 /**
  * @package         Modals
- * @version         14.0.14
+ * @version         14.1.0
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            https://regularlabs.com
@@ -13,6 +13,7 @@ defined('_JEXEC') or die;
 
 use Joomla\CMS\Factory as JFactory;
 use Joomla\CMS\Language\Text as JText;
+use Joomla\CMS\Layout\FileLayout as JFileLayout;
 use RegularLabs\Library\Document as RL_Document;
 use RegularLabs\Library\Extension as RL_Extension;
 use RegularLabs\Library\Html as RL_Html;
@@ -26,7 +27,9 @@ use RegularLabs\Plugin\System\Modals\Replace;
 // Do not instantiate plugin on install pages
 // to prevent installation/update breaking because of potential breaking changes
 if (
-    in_array(JFactory::getApplication()->input->getCmd('option'), ['com_installer', 'com_regularlabsmanager'])
+    in_array(JFactory::getApplication()->input->getCmd('option'), [
+        'com_installer', 'com_regularlabsmanager'
+    ])
     && JFactory::getApplication()->input->getCmd('action') != ''
 )
 {

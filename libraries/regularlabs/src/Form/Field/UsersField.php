@@ -2,7 +2,7 @@
 
 /**
  * @package         Regular Labs Library
- * @version         24.6.22903
+ * @version         24.8.21262
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            https://regularlabs.com
@@ -34,10 +34,10 @@ class UsersField extends RL_FormField
         }
         return Form::getNamesWithExtras($users, ['username', 'id', 'disabled']);
     }
-    protected function getListOptions(array $attributes): array
+    protected function getListOptions(array $attributes): array|int
     {
         if ($this->max_list_count && $this->getUsersCount() > $this->max_list_count) {
-            return [];
+            return -1;
         }
         $users = $this->getUsers();
         $options = $this->getOptionsByList($users, ['username', 'id', 'disabled'], 0, $this->get('username_as_value') ? 'username' : 'id');

@@ -2,7 +2,7 @@
 
 /**
  * @package         Regular Labs Library
- * @version         24.6.22903
+ * @version         24.8.21262
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            https://regularlabs.com
@@ -268,7 +268,7 @@ class File
         if (count($filetypes) == 1 && str_contains($filetypes[0], ',')) {
             $filetypes = \RegularLabs\Library\ArrayHelper::toArray($filetypes[0]);
         }
-        $filetypes = ($filetypes ?? null) ?: self::getFileTypes();
+        $filetypes = $filetypes ?? null ?: self::getFileTypes();
         return in_array($filetype, $filetypes);
     }
     public static function isVideo(string $url): bool

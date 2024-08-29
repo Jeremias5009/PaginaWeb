@@ -2,7 +2,7 @@
 
 /**
  * @package         Regular Labs Library
- * @version         24.6.22903
+ * @version         24.8.21262
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            https://regularlabs.com
@@ -44,7 +44,7 @@ class EditorButtonPopup
         preg_match('#^hsla?\(([0-9]+)[\D]+([0-9]+)[\D]+([0-9]+)[\D]+([0-9](?:.\d+)?)?\)$#i', $template_params->get('hue', 'hsl(214, 63%, 20%)'), $matches);
         // Enable assets
         $asset_manager->getRegistry()->addTemplateRegistryFile('atum', 1);
-        $asset_manager->usePreset('template.atum.' . (($direction === 'rtl') ? 'rtl' : 'ltr'))->addInlineStyle(':root {
+        $asset_manager->usePreset('template.atum.' . ($direction === 'rtl' ? 'rtl' : 'ltr'))->addInlineStyle(':root {
                 --hue: ' . $matches[1] . ';
                 --template-bg-light: ' . $template_params->get('bg-light', '--template-bg-light') . ';
                 --template-text-dark: ' . $template_params->get('text-dark', '--template-text-dark') . ';
@@ -55,7 +55,7 @@ class EditorButtonPopup
         // No template.js for modals
         //$asset_manager->disableScript('template.atum');
         // Override 'template.active' asset to set correct ltr/rtl dependency
-        $asset_manager->registerStyle('template.active', '', [], [], ['template.atum.' . (($direction === 'rtl') ? 'rtl' : 'ltr')]);
+        $asset_manager->registerStyle('template.active', '', [], [], ['template.atum.' . ($direction === 'rtl' ? 'rtl' : 'ltr')]);
         // Browsers support SVG favicons
         $doc->addHeadLink(JHtml::_('image', 'joomla-favicon.svg', '', [], \true, 1), 'icon', 'rel', ['type' => 'image/svg+xml']);
         $doc->addHeadLink(JHtml::_('image', 'favicon.ico', '', [], \true, 1), 'alternate icon', 'rel', ['type' => 'image/vnd.microsoft.icon']);

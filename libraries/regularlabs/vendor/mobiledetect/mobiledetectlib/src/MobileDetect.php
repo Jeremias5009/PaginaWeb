@@ -830,7 +830,7 @@ class MobileDetect
     public function __construct(Cache $cache = null, array $config = [])
     {
         // If no custom cache provided then use our own.
-        $this->cache = ($cache == null) ? new Cache() : $cache;
+        $this->cache = $cache == null ? new Cache() : $cache;
         // Override config from user.
         $this->config = array_merge($this->config, $config);
         // Beware that if you use "autoInitOfHttpHeaders: false" and you forget to setUserAgent
@@ -1377,7 +1377,7 @@ class MobileDetect
                 // Identify and extract the version.
                 preg_match(sprintf('#%s#is', $propertyPattern), $this->userAgent, $match);
                 if (\false === empty($match[1])) {
-                    return ($type == self::VERSION_TYPE_FLOAT) ? $this->prepareVersionNo($match[1]) : $match[1];
+                    return $type == self::VERSION_TYPE_FLOAT ? $this->prepareVersionNo($match[1]) : $match[1];
                 }
             }
         }

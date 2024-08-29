@@ -2,7 +2,7 @@
 
 /**
  * @package         Regular Labs Library
- * @version         24.6.22903
+ * @version         24.8.21262
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            https://regularlabs.com
@@ -25,7 +25,7 @@ class ShowOnField extends RL_FormField
             return $this->getControlGroupEnd() . RL_ShowOn::close() . $this->getControlGroupStart();
         }
         $formControl = $this->get('form', $this->formControl);
-        $formControl = ($formControl == 'root') ? '' : $formControl;
+        $formControl = $formControl == 'root' ? '' : $formControl;
         while (str_starts_with($value, '../')) {
             $value = substr($value, 3);
             if (str_contains($formControl, '[')) {

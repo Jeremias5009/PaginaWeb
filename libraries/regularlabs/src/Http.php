@@ -2,7 +2,7 @@
 
 /**
  * @package         Regular Labs Library
- * @version         24.6.22903
+ * @version         24.8.21262
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            https://regularlabs.com
@@ -41,7 +41,7 @@ class Http
         $cache = new \RegularLabs\Library\Cache();
         $cache_ttl = \RegularLabs\Library\Input::getInt('cache', 0);
         if ($cache_ttl) {
-            $cache->useFiles(($cache_ttl > 1) ? $cache_ttl : null);
+            $cache->useFiles($cache_ttl > 1 ? $cache_ttl : null);
         }
         if ($cache->exists()) {
             return $cache->get();
@@ -67,7 +67,7 @@ class Http
             die;
         }
         $content = self::getContents($url, $timeout);
-        $format = (str_contains($url, '.json') || str_contains($url, 'format=json')) ? 'application/json' : 'text/xml';
+        $format = str_contains($url, '.json') || str_contains($url, 'format=json') ? 'application/json' : 'text/xml';
         header("Pragma: public");
         header("Expires: 0");
         header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
@@ -86,7 +86,7 @@ class Http
         $cache = new \RegularLabs\Library\Cache();
         $cache_ttl = \RegularLabs\Library\Input::getInt('cache', 0);
         if ($cache_ttl) {
-            $cache->useFiles(($cache_ttl > 1) ? $cache_ttl : null);
+            $cache->useFiles($cache_ttl > 1 ? $cache_ttl : null);
         }
         if ($cache->exists()) {
             return $cache->get();

@@ -2,7 +2,7 @@
 
 /**
  * @package         Regular Labs Library
- * @version         24.6.22903
+ * @version         24.8.21262
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            https://regularlabs.com
@@ -18,27 +18,28 @@ class Html
     /**
      * Removes complete html tag pairs from the concatenated parts
      */
-    public static function cleanSurroundingTags(array $parts, array $elements = ['p', 'span']): array
+    public static function cleanSurroundingTags(array $parts, array $elements = ['p', 'span', 'strong', 'b', 'em', 'i']): array
     {
         $breaks = '(?:(?:<br ?/?>|<\!--[^>]*-->|:\|:)\s*)*';
         $keys = array_keys($parts);
         $string = implode(':|:', $parts);
         \RegularLabs\Library\Protect::protectHtmlCommentTags($string);
         // Remove empty tags
-        $regex = '<(' . implode('|', $elements) . ')(?: [^>]*)?>\s*(' . $breaks . ')<\/\1>\s*';
+        $regex = '<(?<tag>' . implode('|', $elements) . ')(?: [^>]*)?>\s*(?<breaks>' . $breaks . ')<\/\1>\s*';
         while (\RegularLabs\Library\RegEx::match($regex, $string, $match)) {
-            $string = str_replace($match[0], $match[2], $string);
+            $string = str_replace($match[0], $match['breaks'], $string);
         }
         // Remove paragraphs around block elements
         $block_elements = ['p', 'div', 'table', 'tr', 'td', 'thead', 'tfoot', 'h[1-6]'];
-        $block_elements = '(' . implode('|', $block_elements) . ')';
-        $regex = '(<p(?: [^>]*)?>)(\s*' . $breaks . ')(<' . $block_elements . '(?: [^>]*)?>)';
+        $block_elements = '(?<element>' . implode('|', $block_elements) . ')';
+        $regex = '(?<p_tag><p(?: [^>]*)?>)(?<breaks>\s*' . $breaks . ')(?<block_tag><' . $block_elements . '(?: [^>]*)?>)';
         while (\RegularLabs\Library\RegEx::match($regex, $string, $match)) {
-            if ($match[4] == 'p') {
-                $match[3] = $match[1] . $match[3];
-                self::combinePTags($match[3]);
+            $tags = $match['block_tag'];
+            if ($match['element'] == 'p') {
+                $tags = $match['p_tag'] . $tags;
+                self::combinePTags($tags);
             }
-            $string = str_replace($match[0], $match[2] . $match[3], $string);
+            $string = str_replace($match[0], $match['breaks'] . $tags, $string);
         }
         $regex = '(</' . $block_elements . '>\s*' . $breaks . ')</p>';
         while (\RegularLabs\Library\RegEx::match($regex, $string, $match)) {

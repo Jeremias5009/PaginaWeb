@@ -1,6 +1,6 @@
 /**
  * @package         Modals
- * @version         14.0.14
+ * @version         14.1.0
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            https://regularlabs.com
@@ -8,8 +8,8 @@
  * @license         GNU General Public License version 2 or later
  */
 
-import {Modal} from './modules/modal.js?14.0.14';
-import {Helper} from './modules/helper.js?14.0.14';
+import {Modal} from './modules/modal.js?14.1.0';
+import {Helper} from './modules/helper.js?14.1.0';
 
 (function() {
     'use strict';

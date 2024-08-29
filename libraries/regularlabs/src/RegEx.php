@@ -2,7 +2,7 @@
 
 /**
  * @package         Regular Labs Library
- * @version         24.6.22903
+ * @version         24.8.21262
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            https://regularlabs.com
@@ -87,7 +87,7 @@ class RegEx
             return $array;
         }
         if (!str_starts_with($pattern, '#')) {
-            $options = (!is_null($options)) ? $options : 'si';
+            $options = !is_null($options) ? $options : 'si';
             $pattern = '#' . $pattern . '#' . $options;
         }
         if (\RegularLabs\Library\StringHelper::detectUTF8($string)) {

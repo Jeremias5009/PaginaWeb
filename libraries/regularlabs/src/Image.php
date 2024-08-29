@@ -2,7 +2,7 @@
 
 /**
  * @package         Regular Labs Library
- * @version         24.6.22903
+ * @version         24.8.21262
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            https://regularlabs.com
@@ -220,8 +220,8 @@ class Image
         $this->attributes->srcset = $this->getSrcset();
         $this->attributes->alt = $this->getAlt();
         $this->attributes->title = $this->getTitle(\true);
-        $this->attributes->width = $this->output->width ?: ($this->attributes->width ?? 0);
-        $this->attributes->height = $this->output->height ?: ($this->attributes->height ?? 0);
+        $this->attributes->width = $this->output->width ?: $this->attributes->width ?? 0;
+        $this->attributes->height = $this->output->height ?: $this->attributes->height ?? 0;
         if ($this->attributes->width < $tag_width) {
             $this->attributes->width = $tag_width;
             $this->attributes->height = round($this->attributes->height * ($tag_width / $this->attributes->width));
@@ -333,7 +333,7 @@ class Image
     }
     public function setDimensions(int|float|string $width, int|float|string $height): self
     {
-        $this->setResizeMethod((empty($width) || empty($height)) ? 'scale' : 'crop');
+        $this->setResizeMethod(empty($width) || empty($height) ? 'scale' : 'crop');
         $this->setOutputSetting('width', (int) $width);
         $this->setOutputSetting('height', (int) $height);
         return $this;
@@ -586,8 +586,8 @@ class Image
         // Width and height are both set
         if ($this->output->width && $this->output->height) {
             $boundry = $this->getResizeBoundry();
-            $this->output->width = ($boundry == 'width') ? $this->output->width : round($this->output->height / $this->input->height * $this->input->width);
-            $this->output->height = ($boundry == 'height') ? $this->output->height : round($this->output->width / $this->input->width * $this->input->height);
+            $this->output->width = $boundry == 'width' ? $this->output->width : round($this->output->height / $this->input->height * $this->input->width);
+            $this->output->height = $boundry == 'height' ? $this->output->height : round($this->output->width / $this->input->width * $this->input->height);
             return $this->resize();
         }
         $this->output->width = $this->output->width ?: round($this->output->height / $this->input->height * $this->input->width);

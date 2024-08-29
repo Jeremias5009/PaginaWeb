@@ -2,7 +2,7 @@
 
 /**
  * @package         Regular Labs Library
- * @version         24.6.22903
+ * @version         24.8.21262
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            https://regularlabs.com
@@ -97,7 +97,7 @@ class StringReplacer
         }
         $start = $start ?: '^';
         $end = $end ?: '$';
-        $regex = $exclude_strings ? '()(' . \RegularLabs\Library\RegEx::quote($start) . ')(.*?)(' . \RegularLabs\Library\RegEx::quote($end) . ')()' : ('(' . \RegularLabs\Library\RegEx::quote($start) . '.*?' . \RegularLabs\Library\RegEx::quote($end) . ')');
+        $regex = $exclude_strings ? '()(' . \RegularLabs\Library\RegEx::quote($start) . ')(.*?)(' . \RegularLabs\Library\RegEx::quote($end) . ')()' : '(' . \RegularLabs\Library\RegEx::quote($start) . '.*?' . \RegularLabs\Library\RegEx::quote($end) . ')';
         return $this->excludeExceptRegex($regex);
     }
     public function excludeRegex(string $regex): self
@@ -319,7 +319,7 @@ class StringReplacer
     private function getFormRegexes(array $form_classes = []): object
     {
         $form_classes = \RegularLabs\Library\ArrayHelper::toArray($form_classes);
-        $start = '(<form\s[^>]*(?:' . '(?:id|name)="(?:adminForm|postform|submissionForm|default_action_user|seblod_form|spEntryForm)"' . '|action="[^"]*option=com_myjspace&(?:amp;)?view=see"' . ((!empty($form_classes)) ? '|class="(?:[^"]* )?(?:' . implode('|', $form_classes) . ')(?: [^"]*)?"' : '') . '))';
+        $start = '(<form\s[^>]*(?:' . '(?:id|name)="(?:adminForm|postform|submissionForm|default_action_user|seblod_form|spEntryForm)"' . '|action="[^"]*option=com_myjspace&(?:amp;)?view=see"' . (!empty($form_classes) ? '|class="(?:[^"]* )?(?:' . implode('|', $form_classes) . ')(?: [^"]*)?"' : '') . '))';
         $end = '(</form>)';
         return (object) compact('start', 'end');
     }

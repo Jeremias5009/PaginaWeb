@@ -2,7 +2,7 @@
 
 /**
  * @package         Regular Labs Library
- * @version         24.6.22903
+ * @version         24.8.21262
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            https://regularlabs.com
@@ -54,7 +54,7 @@ class Version
      */
     public static function getMajorJoomlaVersion(): int
     {
-        return ((int) JVERSION == 5) ? 4 : (int) JVERSION;
+        return (int) JVERSION == 5 ? 4 : (int) JVERSION;
     }
     /**
      * Get the version message
@@ -133,7 +133,7 @@ class Version
     private static function getMessageText(string $alias, string $name, string $version): string
     {
         [$url, $onclick] = self::getUpdateLink($alias, $version);
-        $href = $onclick ? '' : ('href="' . $url . '" target="_blank" ');
+        $href = $onclick ? '' : 'href="' . $url . '" target="_blank" ';
         $onclick = $onclick ? 'onclick="' . $onclick . '" ' : '';
         $is_pro = str_contains($version, 'PRO');
         $version = str_replace(['FREE', 'PRO'], ['', ' <small>[PRO]</small>'], $version);

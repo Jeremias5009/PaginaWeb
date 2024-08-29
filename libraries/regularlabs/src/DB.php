@@ -2,7 +2,7 @@
 
 /**
  * @package         Regular Labs Library
- * @version         24.6.22903
+ * @version         24.8.21262
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            https://regularlabs.com
@@ -36,7 +36,7 @@ class DB
         if (count($conditions) < 2) {
             return reset($conditions);
         }
-        $glue = (strtoupper($glue) == 'AND') ? 'AND' : 'OR';
+        $glue = strtoupper($glue) == 'AND' ? 'AND' : 'OR';
         return '(' . implode(' ' . $glue . ' ', $conditions) . ')';
     }
     /**
@@ -179,12 +179,12 @@ class DB
             $value = is_array($values) ? reset($values) : $values;
             $value = self::prepareValue($value, $options);
             if ($value === 'NULL') {
-                $operator = ($operator == '!=') ? 'IS NOT' : 'IS';
+                $operator = $operator == '!=' ? 'IS NOT' : 'IS';
             }
             return $keys . ' ' . $operator . ' ' . $value;
         }
         $values = \RegularLabs\Library\ArrayHelper::clean($values);
-        $operator = ($operator == '!=') ? 'NOT IN' : 'IN';
+        $operator = $operator == '!=' ? 'NOT IN' : 'IN';
         if ($glue == 'OR') {
             $values = self::removeOperator($values);
             $values = self::prepareValue($values, $options);
@@ -282,10 +282,10 @@ class DB
         }
         $operator = self::getOperator($value);
         if ($value == '*') {
-            return $key . ' ' . (($operator == '!=') ? 'IS NULL' : 'IS NOT NULL');
+            return $key . ' ' . ($operator == '!=' ? 'IS NULL' : 'IS NOT NULL');
         }
         $key = 'LOWER(' . $key . ')';
-        $operator = ($operator == '!=') ? 'NOT LIKE' : 'LIKE';
+        $operator = $operator == '!=' ? 'NOT LIKE' : 'LIKE';
         $options = (object) \RegularLabs\Library\ArrayHelper::toArray($options);
         $value = self::removeOperator($value);
         $value = self::prepareValue($value, $options);

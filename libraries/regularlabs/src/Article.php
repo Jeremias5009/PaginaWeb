@@ -2,7 +2,7 @@
 
 /**
  * @package         Regular Labs Library
- * @version         24.6.22903
+ * @version         24.8.21262
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            https://regularlabs.com
@@ -22,7 +22,7 @@ class Article
      */
     public static function get(int|string|null $id = null, bool $get_unpublished = \false, array $selects = []): object|null
     {
-        $id = ($id ?? null) ?: (int) self::getId();
+        $id = $id ?? null ?: (int) self::getId();
         $cache = new \RegularLabs\Library\Cache();
         if ($cache->exists()) {
             return $cache->get();

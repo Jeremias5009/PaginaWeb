@@ -2,7 +2,7 @@
 
 /**
  * @package         Regular Labs Library
- * @version         24.6.22903
+ * @version         24.8.21262
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            https://regularlabs.com
@@ -32,7 +32,7 @@ class GeoField extends RL_FormField
         }
         return parent::getInput();
     }
-    protected function getListOptions(array $attributes): array
+    protected function getListOptions(array $attributes): array|int
     {
         $options = [];
         foreach ($this->{$attributes['group']} as $key => $val) {

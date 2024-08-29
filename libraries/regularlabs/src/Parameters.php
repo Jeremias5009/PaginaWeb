@@ -2,7 +2,7 @@
 
 /**
  * @package         Regular Labs Library
- * @version         24.6.22903
+ * @version         24.8.21262
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            https://regularlabs.com
@@ -98,7 +98,7 @@ class Parameters
         }
         if (empty($params)) {
             $plugin = JPluginHelper::getPlugin($type, $name);
-            $params = (is_object($plugin) && isset($plugin->params)) ? $plugin->params : null;
+            $params = is_object($plugin) && isset($plugin->params) ? $plugin->params : null;
         }
         return $cache->set(self::getObjectFromRegistry($params, JPATH_PLUGINS . '/' . $type . '/' . $name . '/' . $name . '.xml'));
     }

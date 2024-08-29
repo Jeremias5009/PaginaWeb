@@ -2,7 +2,7 @@
 
 /**
  * @package         Regular Labs Library
- * @version         24.6.22903
+ * @version         24.8.21262
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            https://regularlabs.com
@@ -98,7 +98,7 @@ class CheckboxesField extends JCheckboxesField
     private function getOption(SimpleXMLElement $option, string $fieldname): object
     {
         $value = (string) $option['value'];
-        $text = (trim((string) $option) != '') ? trim((string) $option) : $value;
+        $text = trim((string) $option) != '' ? trim((string) $option) : $value;
         $disabled = (string) $option['disabled'];
         $disabled = $disabled === 'true' || $disabled === 'disabled' || $disabled === '1';
         $disabled = $disabled || $this->readonly && $value != $this->value;

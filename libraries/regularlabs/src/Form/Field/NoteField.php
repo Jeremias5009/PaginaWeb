@@ -2,7 +2,7 @@
 
 /**
  * @package         Regular Labs Library
- * @version         24.6.22903
+ * @version         24.8.21262
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            https://regularlabs.com
@@ -41,9 +41,9 @@ class NoteField extends RL_FormField
         $title = $this->prepareText($this->element['title']);
         $text = $this->prepareText($this->element['text']);
         $heading = $this->element['heading'] ?: 'h4';
-        $class = (!empty($this->element['class'])) ? ' class="' . $this->element['class'] . '"' : '';
+        $class = !empty($this->element['class']) ? ' class="' . $this->element['class'] . '"' : '';
         $html = [];
-        $html[] = (!empty($title)) ? '<' . $heading . '>' . $title . '</' . $heading . '>' : '';
+        $html[] = !empty($title) ? '<' . $heading . '>' . $title . '</' . $heading . '>' : '';
         $html[] = $text ?: '';
         return '<div ' . $class . '>' . implode('', $html) . '</div>';
     }

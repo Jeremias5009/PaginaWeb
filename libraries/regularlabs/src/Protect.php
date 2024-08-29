@@ -2,7 +2,7 @@
 
 /**
  * @package         Regular Labs Library
- * @version         24.6.22903
+ * @version         24.8.21262
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            https://regularlabs.com
@@ -83,7 +83,7 @@ class Protect
     public static function getFormRegex(array|string $form_classes = []): string
     {
         $form_classes = \RegularLabs\Library\ArrayHelper::toArray($form_classes);
-        return '(<form\s[^>]*(' . '(id|name)="(adminForm|postform|submissionForm|default_action_user|seblod_form|spEntryForm)"' . '|action="[^"]*option=com_myjspace&(amp;)?view=see"' . ((!empty($form_classes)) ? '|class="([^"]* )?(' . implode('|', $form_classes) . ')( [^"]*)?"' : '') . '))';
+        return '(<form\s[^>]*(' . '(id|name)="(adminForm|postform|submissionForm|default_action_user|seblod_form|spEntryForm)"' . '|action="[^"]*option=com_myjspace&(amp;)?view=see"' . (!empty($form_classes) ? '|class="([^"]* )?(' . implode('|', $form_classes) . ')( [^"]*)?"' : '') . '))';
     }
     /**
      * Get the start and end parts for the inline comment tags for scripts/styles

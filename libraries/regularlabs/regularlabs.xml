@@ -2,8 +2,8 @@
 <extension version="4.0" type="library" method="upgrade">
   <name>Regular Labs Library</name>
   <description>Regular Labs Library - used by Regular Labs extensions</description>
-  <version>24.6.22903</version>
-  <creationDate>July 2024</creationDate>
+  <version>24.8.21262</version>
+  <creationDate>August 2024</creationDate>
   <author>Regular Labs (Peter van Westen)</author>
   <authorEmail>info@regularlabs.com</authorEmail>
   <authorUrl>https://regularlabs.com</authorUrl>

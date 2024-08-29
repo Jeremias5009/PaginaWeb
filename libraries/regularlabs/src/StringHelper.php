@@ -2,7 +2,7 @@
 
 /**
  * @package         Regular Labs Library
- * @version         24.6.22903
+ * @version         24.8.21262
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            https://regularlabs.com
@@ -128,7 +128,7 @@ class StringHelper extends \Joomla\String\StringHelper
             'numbered', 2 => 'numbered',
             default => 'number',
         };
-        $words = preg_split('#[^\p{L}\p{N}\']+#u', $string, -1, ($format == 'numbered') ? \PREG_SPLIT_OFFSET_CAPTURE : null);
+        $words = preg_split('#[^\p{L}\p{N}\']+#u', $string, -1, $format == 'numbered' ? \PREG_SPLIT_OFFSET_CAPTURE : null);
         switch ($format) {
             case 'array':
                 return $words;

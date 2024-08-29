@@ -2,7 +2,7 @@
 
 /**
  * @package         Regular Labs Library
- * @version         24.6.22903
+ * @version         24.8.21262
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            https://regularlabs.com
@@ -43,7 +43,7 @@ class ActionLogPlugin extends JActionLogPlugin
             $this->events = \RegularLabs\Library\ArrayHelper::toArray($config->actionlog_events);
         }
         $this->name = JText::_($this->name);
-        $this->option = $this->option ?: ('com_' . $this->alias);
+        $this->option = $this->option ?: 'com_' . $this->alias;
     }
     public function addItem($extension, $type, $title)
     {
@@ -94,7 +94,7 @@ class ActionLogPlugin extends JActionLogPlugin
         $title = $table->title ?? $table->name ?? $table->id;
         $item_url = str_replace('{id}', $table->id, $item->url);
         $message = ['action' => $isNew ? 'add' : 'update', 'type' => $item->title, 'id' => $table->id, 'title' => $title, 'itemlink' => $item_url];
-        $languageKey = $isNew ? $this->lang_prefix_save . '_CONTENT_ADDED' : ($this->lang_prefix_save . '_CONTENT_UPDATED');
+        $languageKey = $isNew ? $this->lang_prefix_save . '_CONTENT_ADDED' : $this->lang_prefix_save . '_CONTENT_UPDATED';
         $this->addLog([$message], $languageKey, $context);
     }
     public function onContentChangeState($context, $ids, $value)

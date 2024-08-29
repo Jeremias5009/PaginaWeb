@@ -2,7 +2,7 @@
 
 /**
  * @package         Regular Labs Library
- * @version         24.6.22903
+ * @version         24.8.21262
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            https://regularlabs.com
@@ -195,7 +195,7 @@ class SystemPlugin extends JCMSPlugin
             return;
         }
         $area = isset($article->created_by) ? 'article' : 'other';
-        $context = ($params instanceof JRegistry && $params->get('rl_search')) ? 'com_search.' . $params->get('readmore_limit') : $context;
+        $context = $params instanceof JRegistry && $params->get('rl_search') ? 'com_search.' . $params->get('readmore_limit') : $context;
         if (!$this->handleOnContentPrepare($area, $context, $article, $params, $page)) {
             return;
         }

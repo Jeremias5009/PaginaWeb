@@ -2,7 +2,7 @@
 
 /**
  * @package         Regular Labs Library
- * @version         24.6.22903
+ * @version         24.8.21262
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            https://regularlabs.com
@@ -51,8 +51,8 @@ class Uri
     public static function createUrlFromArray(array $uri): string
     {
         $user = $uri['user'] ?? '';
-        $pass = (!empty($uri['pass'])) ? ':' . $uri['pass'] : '';
-        return ((!empty($uri['scheme'])) ? $uri['scheme'] . '://' : '') . (($user || $pass) ? $user . $pass . '@' : '') . ((!empty($uri['host'])) ? $uri['host'] : '') . ((!empty($uri['port'])) ? ':' . $uri['port'] : '') . ((!empty($uri['path'])) ? $uri['path'] : '') . ((!empty($uri['query'])) ? '?' . $uri['query'] : '') . ((!empty($uri['fragment'])) ? '#' . $uri['fragment'] : '');
+        $pass = !empty($uri['pass']) ? ':' . $uri['pass'] : '';
+        return (!empty($uri['scheme']) ? $uri['scheme'] . '://' : '') . ($user || $pass ? $user . $pass . '@' : '') . (!empty($uri['host']) ? $uri['host'] : '') . (!empty($uri['port']) ? ':' . $uri['port'] : '') . (!empty($uri['path']) ? $uri['path'] : '') . (!empty($uri['query']) ? '?' . $uri['query'] : '') . (!empty($uri['fragment']) ? '#' . $uri['fragment'] : '');
     }
     public static function decode(string $string, bool $urldecode = \true): string
     {

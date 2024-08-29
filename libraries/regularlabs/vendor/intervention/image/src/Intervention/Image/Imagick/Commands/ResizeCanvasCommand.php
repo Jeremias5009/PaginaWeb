@@ -29,8 +29,8 @@ class ResizeCanvasCommand extends AbstractCommand
             $height = $original_height + $height;
         }
         // check for negative width/height
-        $width = ($width <= 0) ? $width + $original_width : $width;
-        $height = ($height <= 0) ? $height + $original_height : $height;
+        $width = $width <= 0 ? $width + $original_width : $width;
+        $height = $height <= 0 ? $height + $original_height : $height;
         // create new canvas
         $canvas = $image->getDriver()->newImage($width, $height, $bgcolor);
         // set copy position
@@ -60,7 +60,7 @@ class ResizeCanvasCommand extends AbstractCommand
         // even if background-color is set
         $rect = new \ImagickDraw();
         $fill = $canvas->pickColor(0, 0, 'hex');
-        $fill = ($fill == '#ff0000') ? '#00ff00' : '#ff0000';
+        $fill = $fill == '#ff0000' ? '#00ff00' : '#ff0000';
         $rect->setFillColor($fill);
         $rect->rectangle($dst_x, $dst_y, $dst_x + $src_w - 1, $dst_y + $src_h - 1);
         $canvas->getCore()->drawImage($rect);

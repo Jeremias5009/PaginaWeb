@@ -129,14 +129,14 @@ class Size
         }
         if (is_numeric($width)) {
             if ($constraint->isFixed(Constraint::UPSIZE)) {
-                $this->width = ($width > $max_width) ? $max_width : $width;
+                $this->width = $width > $max_width ? $max_width : $width;
             } else {
                 $this->width = $width;
             }
             if ($constraint->isFixed(Constraint::ASPECTRATIO)) {
                 $h = max(1, intval(round($this->width / $constraint->getSize()->getRatio())));
                 if ($constraint->isFixed(Constraint::UPSIZE)) {
-                    $this->height = ($h > $max_height) ? $max_height : $h;
+                    $this->height = $h > $max_height ? $max_height : $h;
                 } else {
                     $this->height = $h;
                 }
@@ -159,14 +159,14 @@ class Size
         }
         if (is_numeric($height)) {
             if ($constraint->isFixed(Constraint::UPSIZE)) {
-                $this->height = ($height > $max_height) ? $max_height : $height;
+                $this->height = $height > $max_height ? $max_height : $height;
             } else {
                 $this->height = $height;
             }
             if ($constraint->isFixed(Constraint::ASPECTRATIO)) {
                 $w = max(1, intval(round($this->height * $constraint->getSize()->getRatio())));
                 if ($constraint->isFixed(Constraint::UPSIZE)) {
-                    $this->width = ($w > $max_width) ? $max_width : $w;
+                    $this->width = $w > $max_width ? $max_width : $w;
                 } else {
                     $this->width = $w;
                 }

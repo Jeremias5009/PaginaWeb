@@ -2,7 +2,7 @@
 
 /**
  * @package         Regular Labs Library
- * @version         24.6.22903
+ * @version         24.8.21262
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            https://regularlabs.com
@@ -70,7 +70,7 @@ class MenuItemsField extends RL_FormField
                     // $link->disable = 1;
                 }
                 if (JMultilanguage::isEnabled() && $link->language != '' && $link->language != '*') {
-                    $text[] = $link->language_image ? JHtml::_('image', 'mod_languages/' . $link->language_image . '.gif', $link->language_title, ['title' => $link->language_title], \true) : ('<span class="badge bg-secondary" title="' . $link->language_title . '">' . $link->language_sef . '</span>');
+                    $text[] = $link->language_image ? JHtml::_('image', 'mod_languages/' . $link->language_image . '.gif', $link->language_title, ['title' => $link->language_title], \true) : '<span class="badge bg-secondary" title="' . $link->language_title . '">' . $link->language_sef . '</span>';
                 }
                 $link->text = implode(' ', $text);
                 $options[] = $link;

@@ -2,7 +2,7 @@
 
 /**
  * @package         Regular Labs Library
- * @version         24.6.22903
+ * @version         24.8.21262
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            https://regularlabs.com
@@ -34,8 +34,12 @@ class Document
     {
         self::message($message, 'error');
     }
-    public static function get(): JDocument
+    public static function get(): ?JDocument
     {
+        $app = JFactory::getApplication();
+        if (!method_exists($app, 'getDocument')) {
+            return null;
+        }
         $document = JFactory::getApplication()->getDocument();
         if (!is_null($document)) {
             return $document;
@@ -53,7 +57,7 @@ class Document
     }
     public static function getComponentBuffer(): ?string
     {
-        $buffer = self::get()->getBuffer('component');
+        $buffer = self::get()->getBuffer('component') ?? null;
         if (empty($buffer) || !is_string($buffer)) {
             return null;
         }
@@ -105,7 +109,7 @@ class Document
     }
     public static function isClient(string $identifier): bool
     {
-        $identifier = ($identifier == 'admin') ? 'administrator' : $identifier;
+        $identifier = $identifier == 'admin' ? 'administrator' : $identifier;
         $cache = new \RegularLabs\Library\Cache();
         if ($cache->exists()) {
             return $cache->get();
@@ -146,7 +150,7 @@ class Document
         if ($cache->exists()) {
             return $cache->get();
         }
-        $is_feed = self::get()->getType() == 'feed' || in_array(\RegularLabs\Library\Input::getWord('format'), ['feed', 'xml'], \true) || in_array(\RegularLabs\Library\Input::getWord('type'), ['rss', 'atom'], \true);
+        $is_feed = self::get() && ((self::get()->getType() ?? null) == 'feed' || in_array(\RegularLabs\Library\Input::getWord('format'), ['feed', 'xml'], \true) || in_array(\RegularLabs\Library\Input::getWord('type'), ['rss', 'atom'], \true));
         return $cache->set($is_feed);
     }
     public static function isHtml(): bool
@@ -155,7 +159,7 @@ class Document
         if ($cache->exists()) {
             return $cache->get();
         }
-        $is_html = self::get()->getType() == 'html';
+        $is_html = self::get() ? self::get()->getType() == 'html' : \false;
         return $cache->set($is_html);
     }
     public static function isHttps(): bool
@@ -197,7 +201,7 @@ class Document
         if ($cache->exists()) {
             return $cache->get();
         }
-        $is_pdf = self::get()->getType() == 'pdf' || \RegularLabs\Library\Input::getWord('format') == 'pdf' || \RegularLabs\Library\Input::getWord('cAction') == 'pdf';
+        $is_pdf = self::get() && ((self::get()->getType() ?? null) == 'pdf' || \RegularLabs\Library\Input::getWord('format') == 'pdf' || \RegularLabs\Library\Input::getWord('cAction') == 'pdf');
         return $cache->set($is_pdf);
     }
     public static function message(string $message, string $type = 'message'): void

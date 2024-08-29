@@ -2,7 +2,7 @@
 
 /**
  * @package         Regular Labs Library
- * @version         24.6.22903
+ * @version         24.8.21262
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            https://regularlabs.com
@@ -43,7 +43,7 @@ class ComponentsField extends RL_FormField
         }
         return $names;
     }
-    protected function getListOptions(array $attributes): array
+    protected function getListOptions(array $attributes): array|int
     {
         $frontend = $attributes['frontend'];
         $admin = $attributes['admin'];

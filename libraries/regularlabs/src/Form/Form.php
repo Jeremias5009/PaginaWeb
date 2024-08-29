@@ -2,7 +2,7 @@
 
 /**
  * @package         Regular Labs Library
- * @version         24.6.22903
+ * @version         24.8.21262
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            https://regularlabs.com
@@ -45,11 +45,11 @@ class Form
                 continue;
             }
             if ($extra == 'unpublished') {
-                $name .= (isset($item->published) && !$item->published) ? ' (' . JText::_('JUNPUBLISHED') . ')' : '';
+                $name .= isset($item->published) && !$item->published ? ' (' . JText::_('JUNPUBLISHED') . ')' : '';
                 continue;
             }
             if ($extra == 'disabled') {
-                $name .= (isset($item->disabled) && $item->disabled) ? ' (' . JText::_('JDISABLED') . ')' : '';
+                $name .= isset($item->disabled) && $item->disabled ? ' (' . JText::_('JDISABLED') . ')' : '';
                 continue;
             }
             if (empty($item->{$extra})) {
@@ -130,7 +130,7 @@ class Form
                 $input = '<input type="text" name="' . $name . '" id="' . $id . '" value="' . $value . '" size="60">';
             }
             $plugin = JPluginHelper::getPlugin('system', 'regularlabs');
-            $url = (!empty($plugin->id)) ? 'index.php?option=com_plugins&task=plugin.edit&extension_id=' . $plugin->id : 'index.php?option=com_plugins&&filter[folder]=&filter[search]=Regular%20Labs%20Library';
+            $url = !empty($plugin->id) ? 'index.php?option=com_plugins&task=plugin.edit&extension_id=' . $plugin->id : 'index.php?option=com_plugins&&filter[folder]=&filter[search]=Regular%20Labs%20Library';
             $label = JText::_('RL_ITEM_IDS');
             $text = JText::_('RL_MAX_LIST_COUNT_INCREASE');
             $tooltip = JText::_('RL_MAX_LIST_COUNT_INCREASE_DESC,' . $max_list_count . ',RL_MAX_LIST_COUNT');
