@@ -1,6 +1,7 @@
 .jmm-team-profiles.default .jmm-mod-row {
 	/*margin: 15px;*/ /*este es mi codigo jere para crear espacio a la derecha*/
-	margin-top: 40px; /*este es mi codigo jere para crear margen arriba*/
+	/*margin-top: 40px;*/ /*este es mi codigo jere para crear margen arriba*/
+	border: 1px solid #ddd;
 }
 
 .jmm-team-profiles.default .jmm-mod-row:before,
@@ -73,11 +74,11 @@ html[dir='rtl'] .jmm-team-profiles.default .jmm-mod-row > div {
 }
 
 .jmm-team-profiles.default {
-	text-align: center /* alineacion de texto a la caja */
+	text-align: left /* alineacion de texto a la caja */
 }
 
 .jmm-team-profiles.default .jmm-avatar {
-	margin-bottom: 40px /*margen de la imagen al texto */
+	margin-bottom: 15px /*margen de la imagen al texto */
 }
 
 .jmm-team-profiles.default .jmm-avatar .rounded img {
@@ -85,17 +86,23 @@ html[dir='rtl'] .jmm-team-profiles.default .jmm-mod-row > div {
 }
 
 .jmm-team-profiles.default .jmm-name {
-	font-size: 1.286em;
+	font-size: 18px;
 	color: #000001;
-    	font-weight: 700;
-    	font-style: oblique;
+    font-weight: 700;
+    line-height: 18px;
 	text-decoration: none;
-	margin-bottom: 40px; /* es mi codigo jere para margen despues del texto del perfil*/
+	margin-bottom: 5px; /* es mi codigo jere para margen despues del texto del perfil*/
+	margin-left: 20px;
+	margin-right: 20px;
 
 }
 
 .jmm-team-profiles.default .jmm-profession {
-	font-size: .929em
+	font-size: 16px;
+	line-height: 18px;
+	font-style: oblique;
+	margin-left: 20px;
+	margin-right: 20px;
 }
 
 .jmm-team-profiles.default .jmm-social {
@@ -120,7 +127,11 @@ html[dir='rtl'] .jmm-team-profiles.default .jmm-mod-row > div {
 }
 
 .jmm-team-profiles.default .jmm-desc {
-	margin-top: 30px
+	font-size: 13px;
+	margin-top: 20px;
+	margin-left: 20px;
+	margin-bottom: 15px;
+	margin-right: 20px;
 }
 
 @media (max-width: 767px) {
@@ -145,12 +156,13 @@ html[dir='rtl'] .jmm-team-profiles.default .jmm-mod-row > div {
 	box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px; /*sombra definido*/	
 }
 
-.jmm-mod-row {
-    transition: all 0.5s ease-out; /* tiempo de transicion*/
-}
+/*habilitar si es necesario el hover al acercar el mouse*/
+/*.jmm-mod-row {*/
+    /*transition: all 0.5s ease-out;*/ /* tiempo de transicion*/
+/*}*/
 
-.jmm-mod-row:hover{
-	box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px; /*hover al posicionar el mouse*/		
-}
+/*.jmm-mod-row:hover{*/
+	/*box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;*/ /*hover al posicionar el mouse*/		
+/*}*/
 
 
