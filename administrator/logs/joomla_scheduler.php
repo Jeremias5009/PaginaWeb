@@ -37,3 +37,33 @@
 2024-09-17	14:45:29	INFO	Ejecutando la tarea#02 'Session GC'.
 2024-09-17	14:45:29	INFO	Tarea> SessionGC end
 2024-09-17	14:45:29	INFO	Ha finalizado con éxito la tarea#02 en 0.00 (neto 0.00) segundos.
+2024-09-17	21:57:33	INFO	Ejecutando la tarea#03 'Update Notification'.
+2024-09-17	21:57:33	INFO	Ha finalizado con éxito la tarea#03 en 0.81 (neto 0.81) segundos.
+2024-09-19	23:07:08	INFO	Ejecutando la tarea#03 'Update Notification'.
+2024-09-19	23:07:09	INFO	Ha finalizado con éxito la tarea#03 en 0.85 (neto 0.85) segundos.
+2024-09-19	23:12:09	INFO	Ejecutando la tarea#02 'Session GC'.
+2024-09-19	23:12:09	INFO	Tarea> SessionGC end
+2024-09-19	23:12:09	INFO	Ha finalizado con éxito la tarea#02 en 0.00 (neto 0.00) segundos.
+2024-09-20	14:27:12	INFO	Ejecutando la tarea#03 'Update Notification'.
+2024-09-20	14:27:13	INFO	Ha finalizado con éxito la tarea#03 en 0.83 (neto 0.83) segundos.
+2024-09-20	20:29:33	INFO	Ejecutando la tarea#03 'Update Notification'.
+2024-09-20	20:29:33	INFO	Ha finalizado con éxito la tarea#03 en 0.44 (neto 0.44) segundos.
+2024-09-22	15:04:59	INFO	Ejecutando la tarea#02 'Session GC'.
+2024-09-22	15:04:59	INFO	Tarea> SessionGC end
+2024-09-22	15:04:59	INFO	Ha finalizado con éxito la tarea#02 en 0.00 (neto 0.00) segundos.
+2024-09-22	15:05:22	INFO	Ejecutando la tarea#03 'Update Notification'.
+2024-09-22	15:05:23	INFO	Ha finalizado con éxito la tarea#03 en 0.79 (neto 0.79) segundos.
+2024-09-23	14:08:20	INFO	Ejecutando la tarea#03 'Update Notification'.
+2024-09-23	14:08:21	INFO	Ha finalizado con éxito la tarea#03 en 0.92 (neto 0.92) segundos.
+2024-09-23	15:10:47	INFO	Ejecutando la tarea#02 'Session GC'.
+2024-09-23	15:10:47	INFO	Tarea> SessionGC end
+2024-09-23	15:10:47	INFO	Ha finalizado con éxito la tarea#02 en 0.00 (neto 0.00) segundos.
+2024-09-23	22:08:46	INFO	Ejecutando la tarea#03 'Update Notification'.
+2024-09-23	22:08:47	INFO	Ha finalizado con éxito la tarea#03 en 0.52 (neto 0.52) segundos.
+2024-09-24	04:16:35	INFO	Ejecutando la tarea#03 'Update Notification'.
+2024-09-24	04:16:35	INFO	Ha finalizado con éxito la tarea#03 en 0.84 (neto 0.84) segundos.
+2024-09-24	14:52:35	INFO	Ejecutando la tarea#03 'Update Notification'.
+2024-09-24	14:52:36	INFO	Ha finalizado con éxito la tarea#03 en 0.51 (neto 0.51) segundos.
+2024-09-24	15:11:25	INFO	Ejecutando la tarea#02 'Session GC'.
+2024-09-24	15:11:25	INFO	Tarea> SessionGC end
+2024-09-24	15:11:25	INFO	Ha finalizado con éxito la tarea#02 en 0.00 (neto 0.00) segundos.
