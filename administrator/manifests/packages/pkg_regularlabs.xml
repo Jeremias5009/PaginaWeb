@@ -2,8 +2,8 @@
 <extension type="package" method="upgrade">
   <packagename>regularlabs</packagename>
   <name>PKG_REGULARLABS</name>
-  <version>24.8.21262</version>
-  <creationDate>August 2024</creationDate>
+  <version>24.9.15446</version>
+  <creationDate>September 2024</creationDate>
   <author>Regular Labs (Peter van Westen)</author>
   <authorEmail>info@regularlabs.com</authorEmail>
   <authorUrl>https://regularlabs.com</authorUrl>

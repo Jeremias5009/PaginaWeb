@@ -2,7 +2,7 @@
 
 /**
  * @package         Convert Forms
- * @version         4.4.4 Free
+ * @version         4.4.5 Free
  * 
  * @author          Tassos Marinos <info@tassos.gr>
  * @link            https://www.tassos.gr
@@ -86,12 +86,12 @@ HTMLHelper::_('bootstrap.popover');
                                             'modalWidth'  => '70',
                                             'footer'      => '<button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-dismiss="modal" aria-hidden="true">'
                                                     . Text::_('JLIB_HTML_BEHAVIOR_CLOSE') . '</button>                                      
-                                                    <button type="button" class="btn btn-primary" aria-hidden="true"
-                                                    onclick="jQuery(\'#' . $modalName . ' iframe\').contents().find(\'#saveBtn\').click();">'
+                                                    <button type="button" class="btn btn-primary"
+                                                        onclick="document.querySelector(\'#' . $modalName . ' iframe\').contentDocument.querySelector(\'' . (version_compare(JVERSION, '5.0', 'ge') ? 'button.button-apply' : '#applyBtn') . '\').click();' . (defined('nrJ4') ? ' window.parent.Joomla.Modal.getCurrent().close();' : '') . '">'
                                                     . Text::_('JSAVE') . '</button>
-                                                    <button type="button" class="btn btn-success" aria-hidden="true"
-                                                    onclick="jQuery(\'#' . $modalName . ' iframe\').contents().find(\'#applyBtn\').click();">'
-                                                    . Text::_('JAPPLY') . '</button>',
+                                                    <button type="button" class="btn btn-success"
+                                                    onclick="document.querySelector(\'#' . $modalName . ' iframe\').contentDocument.querySelector(\'' . (version_compare(JVERSION, '5.0', 'ge') ? 'button.button-apply' : '#applyBtn') . '\').click();">'
+                                                    . Text::_('JAPPLY') . '</button>'
                                         ];
 
                                         echo HTMLHelper::_('bootstrap.renderModal', $modalName, $options);

@@ -4,7 +4,7 @@ namespace RegularLabs\Scoped;
 
 /**
  * @package         Regular Labs Library
- * @version         24.8.21262
+ * @version         24.9.15446
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            https://regularlabs.com

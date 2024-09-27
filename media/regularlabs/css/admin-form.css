@@ -1,6 +1,6 @@
 /**
  * @package         Regular Labs Library
- * @version         24.8.21262
+ * @version         24.9.15446
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            https://regularlabs.com
@@ -841,6 +841,10 @@ a.disabled {
 .rl-ajax-wrapper.loaded > .rl-ajax-field {
   opacity: 0;
   animation: rl-fade-in 0.5s 3s 1 forwards;
+}
+
+.switcher input ~ input:checked.rl-radio-warning ~ .toggle-outside {
+  background-color: #ffb514;
 }
 
 @keyframes rl-fade-in {

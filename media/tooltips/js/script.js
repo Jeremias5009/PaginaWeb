@@ -1,6 +1,6 @@
 /**
  * @package         Tooltips
- * @version         9.2.1
+ * @version         9.2.2
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            https://regularlabs.com
@@ -8,8 +8,8 @@
  * @license         GNU General Public License version 2 or later
  */
 
-import {Tooltip} from './modules/tooltip.js?9.2.1';
-import {Helper} from './modules/helper.js?9.2.1';
+import {Tooltip} from './modules/tooltip.js?9.2.2';
+import {Helper} from './modules/helper.js?9.2.2';
 
 (function() {
     'use strict';

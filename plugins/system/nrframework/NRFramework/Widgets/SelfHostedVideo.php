@@ -48,7 +48,7 @@ class SelfHostedVideo extends Video
 	{
 		if (isset($this->options['value']) && !empty($this->options['value']))
 		{
-			$videos = \NRFramework\Helpers\File::getFileSources($this->options['value'], ['mp4', 'webm','ogg']);
+			$videos = \NRFramework\Helpers\File::getFileSources($this->options['value'], ['mp4', 'webm', 'ogg', 'mov']);
 			$this->options['video'] = is_array($videos) && isset($videos[0]) ? $videos[0] : false;
 		}
 

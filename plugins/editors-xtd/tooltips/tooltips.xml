@@ -2,15 +2,14 @@
 <extension version="4" type="plugin" group="editors-xtd" method="upgrade">
   <name>PLG_EDITORS-XTD_TOOLTIPS</name>
   <description>PLG_EDITORS-XTD_TOOLTIPS_DESC</description>
-  <version>9.2.1</version>
-  <creationDate>July 2024</creationDate>
+  <version>9.2.2</version>
+  <creationDate>September 2024</creationDate>
   <author>Regular Labs (Peter van Westen)</author>
   <authorEmail>info@regularlabs.com</authorEmail>
   <authorUrl>https://regularlabs.com</authorUrl>
   <copyright>Copyright © 2024 Regular Labs - All Rights Reserved</copyright>
   <license>GNU General Public License version 2 or later</license>
   <namespace path="src">RegularLabs\Plugin\EditorButton\Tooltips</namespace>
-  <scriptfile>script.install.php</scriptfile>
   <files>
     <file plugin="tooltips">tooltips.php</file>
     <folder>forms</folder>

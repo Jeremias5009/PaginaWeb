@@ -1,7 +1,7 @@
 <?php
 /**
  * @package         Tooltips
- * @version         9.2.1
+ * @version         9.2.2
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            https://regularlabs.com
@@ -340,7 +340,7 @@ if ( ! class_exists('pkg_tooltipsInstallerScript'))
                     '[PRO]',
                 ],
                 [
-                    '<pre class="border bg-light p-2" style="' . $code_styling . '">',
+                    '<pre class="border bg-light-subtle p-2" style="' . $code_styling . '">',
                     '<span class="' . $badge_classes['success'] . '">FREE</span>',
                     '<span class="' . $badge_classes['info'] . '">PRO</span>',
                 ],
@@ -411,16 +411,6 @@ if ( ! class_exists('pkg_tooltipsInstallerScript'))
             $package_manifest = new JPackageManifest($file);
 
             static::$extensions = $package_manifest->filelist;
-
-            foreach (static::$extensions as $extension)
-            {
-                if ($extension->type != 'module')
-                {
-                    continue;
-                }
-
-                $extension->position = self::getModulePositionFromXMLString($xml, $extension->id);
-            }
 
             return static::$extensions;
         }
@@ -791,7 +781,6 @@ if ( ! class_exists('pkg_tooltipsInstallerScript'))
             $type,
             $name,
             $plugin_folder = 'system',
-            $module_position = 'status',
             $client_id = 0,
             $force = false
         )
@@ -803,6 +792,10 @@ if ( ! class_exists('pkg_tooltipsInstallerScript'))
                     break;
 
                 case 'module' :
+                    $manifest = self::getNewManifest();
+                    $xml      = $manifest->asXML();
+                    $module_position = self::getModulePositionFromXMLString($xml, $name);
+
                     self::publishModule($name, $module_position, $client_id, $force);
                     break;
 
@@ -834,11 +827,11 @@ if ( ! class_exists('pkg_tooltipsInstallerScript'))
                     continue;
                 }
 
+
                 self::publishExtension(
                     $extension->type,
                     $extension->id,
                     isset($extension->group) ? $extension->group : 'system',
-                    isset($extension->position) ? $extension->position : 'status',
                     $extension->client === 'site' ? 0 : 1,
                     $is_admin_module
                 );

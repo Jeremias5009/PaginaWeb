@@ -722,10 +722,14 @@ a.disabled {
         }
 
         > .rl-ajax-field {
-            opacity: 0;
+            opacity:   0;
             animation: rl-fade-in .5s 3s 1 forwards;
         }
     }
+}
+
+.switcher input ~ input:checked.rl-radio-warning ~ .toggle-outside {
+    background-color: $warning;
 }
 
 @keyframes rl-fade-in {

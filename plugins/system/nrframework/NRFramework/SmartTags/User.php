@@ -13,6 +13,7 @@ use NRFramework\Cache;
 use Joomla\Registry\Registry;
 use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Language\Text;
+use Joomla\CMS\Access\Access;
 
 defined('_JEXEC') or die('Restricted access');
 
@@ -225,5 +226,42 @@ class User extends SmartTag
         }
 
         return HTMLHelper::_('date', $date, Text::_('DATE_FORMAT_LC5'));
+    }
+
+    public function getGroups()
+    {
+        return $this->user->getAuthorisedGroups();
+    }
+
+    public function getGroupTitles()
+    {
+        return array_map(function($groupID)
+        {
+            return Access::getGroupTitle($groupID);
+        }, $this->getGroups());
+    }
+
+    public function getAuthLevels()
+    {
+        return $this->user->getAuthorisedViewLevels();
+    }
+
+    public function getAuthLevelTitles()
+    {
+        if (!$authLevels = $this->getAuthLevels())
+        {
+            return;
+        }
+
+        $db = $this->factory->getDbo();
+
+        $query = $db->getQuery(true)
+            ->select($db->qn('title'))
+            ->from('#__viewlevels')
+            ->where($db->qn('id') . ' IN ' . '(' . implode(',', $authLevels) . ')');
+
+        $db->setQuery($query);
+
+        return $db->loadColumn();
     }
 }

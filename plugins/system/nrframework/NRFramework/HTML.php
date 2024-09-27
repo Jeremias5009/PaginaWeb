@@ -42,6 +42,7 @@ class HTML
         $run = true;
 
 		HTMLHelper::_('bootstrap.popover');
+		HTMLHelper::_('jquery.framework');
 
 		$doc = Factory::getDocument();
 

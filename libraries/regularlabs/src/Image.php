@@ -2,7 +2,7 @@
 
 /**
  * @package         Regular Labs Library
- * @version         24.8.21262
+ * @version         24.9.15446
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            https://regularlabs.com
@@ -33,7 +33,7 @@ class Image
      */
     public function __construct(string $file = null, object $attributes = null)
     {
-        $this->settings = (object) ['resize' => (object) ['enabled' => \true, 'quality' => 70, 'method' => 'crop', 'folder' => 'resized', 'max_age' => 0, 'use_retina' => \true, 'retina_pixel_density' => 1.5], 'title' => (object) ['enabled' => \true, 'format' => 'uppercase_first', 'lowercase_words' => 'a,the,to,at,in,with,and,but,or'], 'lazy_loading' => \false];
+        $this->settings = (object) ['resize' => (object) ['enabled' => \true, 'quality' => 70, 'method' => 'crop', 'folder' => 'resized', 'max_age' => 0, 'force_overwrite' => \false, 'use_retina' => \true, 'retina_pixel_density' => 1.5], 'title' => (object) ['enabled' => \true, 'format' => 'uppercase_first', 'lowercase_words' => 'a,the,to,at,in,with,and,but,or'], 'lazy_loading' => \false];
         if ($file) {
             $this->setFile($file);
         }
@@ -411,6 +411,10 @@ class Image
     {
         return $this->setResizeAttribute('max_age', $age_in_days);
     }
+    public function forceOverwriteResized(): self
+    {
+        return $this->setResizeAttribute('force_overwrite', 1.0E-5);
+    }
     public function setResizeMethod(string $method): self
     {
         $this->settings->resize->method = $method;
@@ -700,9 +704,9 @@ class Image
         $this->output->file = $this->getResizeFolder() . '/' . $file;
         $this->output->file_path = $this->getResizeFolderPath() . '/' . $file;
         $file_exists = $this->outputExists();
-        $file_is_outdated = \false;
-        if ($file_exists && $this->settings->resize->max_age > 0) {
-            $max_age_in_seconds = $this->settings->resize->max_age * 60 * 60 * 24;
+        $file_is_outdated = $this->settings->resize->force_overwrite;
+        if (!$file_is_outdated && $file_exists && $this->settings->resize->max_age > 0) {
+            $max_age_in_seconds = ceil($this->settings->resize->max_age * 60 * 60 * 24);
             $min_time = time() - $max_age_in_seconds;
             $file_is_outdated = filemtime($this->output->file_path) < $min_time;
         }

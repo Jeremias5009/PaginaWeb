@@ -2,7 +2,7 @@
 
 /**
  * @package         Regular Labs Library
- * @version         24.8.21262
+ * @version         24.9.15446
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            https://regularlabs.com
@@ -46,6 +46,10 @@ class DB
     {
         $string = "\n" . (string) $query;
         $string = str_replace('#__', JFactory::getDbo()->getPrefix(), $string);
+        $bounded = $query->getBounded();
+        foreach ($bounded as $key => $obj) {
+            $string = str_replace($key, self::quote($obj->value, \false), $string);
+        }
         \RegularLabs\Library\Protect::protectByRegex($string, ' IN \(.*?\)');
         \RegularLabs\Library\Protect::protectByRegex($string, ' FIELD\(.*?\)');
         $string = preg_replace('#(\n[A-Z][A-Z ]+) #', "\n\\1\n       ", $string);

@@ -2,8 +2,8 @@
 <extension version="4" type="plugin" group="system" method="upgrade">
   <name>PLG_SYSTEM_TOOLTIPS</name>
   <description>PLG_SYSTEM_TOOLTIPS_DESC</description>
-  <version>9.2.1</version>
-  <creationDate>July 2024</creationDate>
+  <version>9.2.2</version>
+  <creationDate>September 2024</creationDate>
   <author>Regular Labs (Peter van Westen)</author>
   <authorEmail>info@regularlabs.com</authorEmail>
   <authorUrl>https://regularlabs.com</authorUrl>

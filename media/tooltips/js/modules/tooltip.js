@@ -1,6 +1,6 @@
 /**
  * @package         Tooltips
- * @version         9.2.1
+ * @version         9.2.2
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            https://regularlabs.com
@@ -10,7 +10,7 @@
 
 'use strict';
 
-import {Helper} from './helper.js?9.2.1';
+import {Helper} from './helper.js?9.2.2';
 
 export function Tooltip(element, id) {
     this.id                   = id;

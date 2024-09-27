@@ -2,7 +2,7 @@
 
 /**
  * @package         Convert Forms
- * @version         4.4.4 Free
+ * @version         4.4.5 Free
  * 
  * @author          Tassos Marinos <info@tassos.gr>
  * @link            https://www.tassos.gr
@@ -29,6 +29,8 @@ $attributes = array_filter(array(
 	isset($options['mute']) && $options['mute'] ? 'muted' : '',
 	isset($options['autoplay']) && $options['autoplay'] ? 'autoplay playsinline' : ''
 ));
+
+$type_ext = $options['video']['ext'] === 'mov' ? 'mp4' : $options['video']['ext'];
 ?>
 <div class="nrf-widget tf-video selfhostedvideo<?php echo $css_class ? ' ' . $css_class : ''; ?>" id="<?php echo $options['id']; ?>">
 	<div class="tf-video-embed" <?php echo $options['atts']; ?>>
@@ -37,7 +39,7 @@ $attributes = array_filter(array(
 			controlsList="nodownload"
 			<?php echo implode(' ', $attributes); ?>
 			style="max-width:100%;">
-			<source data-src="<?php echo $options['video']['file']; ?>" type="video/<?php echo $options['video']['ext']; ?>" />
+			<source data-src="<?php echo $options['video']['file']; ?>" type="video/<?php echo $type_ext; ?>" />
 			<?php echo Text::sprintf('NR_UNSUPPORTED_TAG', 'video'); ?>
 		</video>
 	</div>
