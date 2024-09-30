@@ -1,0 +1,311 @@
+/* estilo para el menú principal con efecto y linea cursiva  */
+.astroid-nav > li > .as-menu-item, .astroid-sidebar-menu > li > .as-menu-item, .astroid-mobile-menu > .nav-item > .as-menu-item {
+    border-right: solid;
+    border-color: #cccbcb;
+    transform: skewX(5deg);
+}
+
+/* Efecto del grid de imagenes  */
+.imagen:hover {
+    filter: brightness(120%);
+    /*filter: contrast(150%);*/
+}
+
+/* Borde superior de la web miembros de  */
+.bordesuperior {
+    border-top: 2px solid #cccbcb;
+}
+
+/* Borde inferior de la web menú  */
+/*.bordeinferior {
+  border-bottom: 2px solid #cccbcb !important;
+}*/
+
+/* Relleno del botón PDH en cifras  */
+#btn-618811d9f73c3463221362 {
+  background: white;
+  font-size: 12pt;
+  letter-spacing: 0.5pt;
+  font-weight: 700;
+}
+
+
+/* Estilos para las noticias plugin*/
+.jt-inner{
+    box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
+    background: white;
+}
+
+/* Estilos para las noticias astroid*/
+.card {
+/*box-shadow: rgba(10, 10, 10, 0.1) 0px 4px 16px, rgba(9, 9, 10, 0.05) 0px 8px 32px;*/
+}
+
+/* Estilos para los comunicados, acciones del día, boletines*/
+.slideComunicados {
+    transition: all 0.5s ease-out;
+}
+
+.slideComunicados:hover{
+/* box-shadow: rgba(10, 10, 10, 0.1) 0px 4px 16px, rgba(9, 9, 10, 0.05) 0px 8px 32px;*/
+   /* box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;*/
+/* box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;*/
+box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+}
+
+
+/*Estilo de los títulos de los menús lateral*/
+.item-195>span::after {
+    content: '';
+    display: block;
+    width: 120px;
+    height: 5px;
+    background-color: black;
+    margin-top: 5px;
+    transform: skewX(10deg);
+}
+.item-198>span::after {
+    content: '';
+    display: block;
+    width: 120px;
+    height: 5px;
+    background-color: black;
+    margin-top: 5px;
+    transform: skewX(10deg);
+}
+
+.item-207>span::after {
+    content: '';
+    display: block;
+    width: 120px;
+    height: 5px;
+    background-color: black;
+    margin-top: 5px;
+    transform: skewX(10deg);
+}
+
+.item-211>span::after {
+    content: '';
+    display: block;
+    width: 120px;
+    height: 5px;
+    background-color: black;
+    margin-top: 5px;
+    transform: skewX(10deg);
+}
+
+.item-229>span::after {
+    content: '';
+    display: block;
+    width: 120px;
+    height: 5px;
+    background-color: black;
+    margin-top: 5px;
+    transform: skewX(10deg);
+}
+
+.item-282>span::after {
+    content: '';
+    display: block;
+    width: 120px;
+    height: 5px;
+    background-color: black;
+    margin-top: 5px;
+    transform: skewX(10deg);
+}
+
+.item-292>span::after {
+    content: '';
+    display: block;
+    width: 120px;
+    height: 5px;
+    background-color: black;
+    margin-top: 5px;
+    transform: skewX(10deg);
+}
+
+/*tamaño de los títulos de los menús laterales*/
+.item-195, .item-198, .item-211, .item-207, .item-229, .item-282, .item-292 {
+    /*font-size: xx-large;*/
+    font-size:40px; /*tamaño de letra*/
+    letter-spacing: 0.5pt; /*Espacio entre letras (interletraje o tracking).*/
+    color: #003764;
+}
+
+/*tamaño y estilo de los submenús laterales*/
+.item-134, .item-135, .item-136, .item-143, .item-196, .item-197, .item-199, .item-200, .item-201, .item-202, 
+.item-203, .item-208, .item-209, .item-204, .item-212, .item-213, .item-214, .item-230, .item-231, .item-232, 
+.item-233, .item-234, .item-235, .item-236, .item-237, .item-238, .item-239, .item-240, .item-241, .item-242, 
+.item-243, .item-244, .item-245, .item-246, .item-247, .item-248, .item-249, .item-250, .item-251, .item-258, 
+.item-261, .item-281, .item-283, .item-284, .item-285, .item-286, .item-287, .item-288, .item-289, .item-290, .item-291{
+    font-size: larger;
+}
+
+
+/*Estilo de los títulos del home multimedia, noticias, Cifras*/
+.subrayadotorcido::after {
+    content: '';
+    display: block;
+    width: 120px;
+    height: 5px;
+    background-color: #0c3c64;
+    margin-top: 5px;
+    transform: skewX(20deg);
+}
+
+/*Estilo Astoid forzado*/
+.rounded-3 {
+  border-radius: var(--bs-border-radius-lg) !important; 
+  margin-left: 20px !important;
+  margin-right: 20px !important;
+  margin-top: 15px !important;
+  margin-bottom: 40px !important;
+}
+
+.astroid-slick .slick-prev, .astroid-slick .slick-next {
+  background: #cccbcb !important;
+  color: #000000 !important;
+  z-index: 1;
+}
+
+/* configuracion de botones para las tarjetas de los articulos*/
+.rounded-pill {
+float: right;
+}
+
+#btn-618811d9f73c3463221362 {
+  float: left;
+}
+
+.astroid-component-section {
+  padding: 0px 0 !important;
+}
+
+
+
+a {
+  transition: color 400ms, background-color 400ms;
+  text-decoration: none !important;
+}
+a:hover {
+  text-decoration: underline !important;
+}
+
+
+/* Estilos para iframes */
+/*.iframe {
+    transition: all 0.5s ease-out;
+}
+
+.iframe:hover {
+box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+}*/
+
+/* efecto para las letras PDH por la defensa de los derechos humanos*/
+#pplddldh-61a3e0f2eb189c6161463{
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 4s steps(42) 1s 1 normal both, blink 1s steps(1) infinite;
+  animation-iteration-count: infinite;
+}
+
+/* efecto para las letras PDH por la defensa de los derechos humanos va escribiendo las letras*/
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+/* Estilos para Servicios Denuncnias, Constancia y info publica */
+.efectoDenun-Cons-Info:hover {
+-webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  overflow: hidden;
+  transition: all .4s ease-in-out;
+}
+.efectoservicioimg:hover {
+  filter: hue-rotate(20deg) saturate(70%) brightness(150%); 
+}
+
+/*Estilo del boton de busqueda noticias y comunicados*/
+.finder::after {
+    content: '';
+    display: block;
+    width: 120px;
+    height: 5px;
+    background-color: #0c3c64;
+    margin-top: 5px;
+    transform: skewX(20deg);
+}
+
+.finder {
+    font-size: larger;
+    margin-bottom: 20px;
+}
+
+/* personalizacion de los iconos socilaes top*/
+.astroid-social-icons {
+  margin-top: 10px;
+  height:35px;
+}
+
+/* estilos para botón bucar top*/
+div.mod-finder__search>button.btn-primary{
+background: #CCCBCB !important;
+--bs-btn-color: #003764 !important;
+}
+
+div.mod-finder__search>button.btn-primary:hover {
+  background: #003764 !important;
+}
+
+div.mod-finder__search>button.btn {
+  --bs-btn-border-width: 0px !important;
+  --bs-btn-border-radius:  !important;
+}
+
+div.mod-finder__search>input#mod-finder-searchword116 {
+  border-radius: 0px !important;
+}
+
+.tamañoletra {
+  font-family: Calibri; /*tipo de letra*/
+  font-style: normal;
+  font-size: 14pt; /*tamaño de letra*/
+  letter-spacing: 0.5pt; /*Espacio entre letras (interletraje o tracking).*/
+  transform: scale(100%, 106%); /* escala vertical de las letras*/
+  /*line-height: 1px; */ /* Establece una altura de línea (interlineado).*/
+}
+
+/* para el boton flortante de servicios*/
+.tamañoletra2 {
+  font-family: Calibri bold; /*tipo de letra*/
+  font-size: 14pt; /*tamaño de letra*/
+  letter-spacing: 0.5pt; /*Espacio entre letras (interletraje o tracking).*/
+}
+/*borde con linea*/
+.jdb-jarticle {
+  border: 1px solid #ddd;
+  transition: all 0.5s ease-out;
+}
+
+.jdb-jarticle:hover{
+box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+}
+
+._access-icon {
+  right: 20px !important;
+  top: 10rem !important;
+  left: auto !important;
+  background-color: rgb(0, 55, 100)!important;
+}
